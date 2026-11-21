@@ -84,6 +84,7 @@ const STAGES_DATA = [
       { "char": "休", "layout": "lr", "recipes": [["人", "木"]], "hint": "人倚木旁，歇息片刻" },
       { "char": "從", "layout": "lr", "recipes": [["人", "人"]], "hint": "一人隨一人，跟從相隨" },
       { "char": "眾", "layout": "tri", "recipes": [["人", "人", "人"], ["從", "人"]], "hint": "三人成眾，人群聚集" },
+      { "char": "坐", "layout": "tri", "recipes": [["人", "人", "土"]], "hint": "臀部著地或依附在椅子、凳子上休息" },
       { "char": "吅", "layout": "lr", "recipes": [["口", "口"]], "hint": "雙口並排，喧嘩之聲" },
       { "char": "品", "layout": "tri", "recipes": [["口", "口", "口"], ["吅", "口"]], "hint": "三口成品，品茗評鑑" },
       { "char": "杏", "layout": "tb", "recipes": [["木", "口"]], "twin": "呆", "hint": "木上口下，春日杏花" },
@@ -480,7 +481,7 @@ const STAGES_DATA = [
     "targets": [
       { "char": "床", "layout": "enc", "recipes": [["广", "木"]], "hint": "屋下木榻，眠床" },
       { "char": "庫", "layout": "enc", "recipes": [["广", "車"]], "hint": "停放兵車之屋，倉庫寶庫" },
-      { "char": "座", "layout": "enc", "recipes": [["广", "從", "土"]], "hint": "屋下二人坐於土上，座位" },
+      { "char": "座", "layout": "enc", "recipes": [["广", "坐"]], "hint": "屋下二人坐於土上，座位" },
       { "char": "反", "layout": "enc", "recipes": [["厂", "又"]], "hint": "手在崖下翻轉，反正反覆" },
       { "char": "灰", "layout": "enc", "recipes": [["厂", "火"]], "hint": "火熄餘燼可手捧，灰燼" },
       { "char": "返", "layout": "enc", "recipes": [["辶", "反"]], "hint": "行而復回，返回往返" },
