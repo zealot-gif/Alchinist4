@@ -2119,7 +2119,7 @@ const STAGES_DATA = [
     "stage": 90,
     "title": "風雅頌歌",
     "subtitle": "書畫傳世",
-    "components": ["公", "雅", "頌", "籍", "畫"],
+    "components": ["公", "雅", "畫"],
     "unlockThreshold": 4,
     "chestRewardCoins": 240,
     "targets": [
@@ -2507,7 +2507,7 @@ const STAGES_DATA = [
     "stage": 107,
     "title": "提綱挈領",
     "subtitle": "百煉成鋼",
-    "components": ["罔", "岡", "網", "剛", "鋼"],
+    "components": ["罔", "岡"],
     "unlockThreshold": 4,
     "chestRewardCoins": 280,
     "targets": [
@@ -2523,7 +2523,7 @@ const STAGES_DATA = [
     "stage": 108,
     "title": "星漢燦爛",
     "subtitle": "飛躍雲霄",
-    "components": ["翟", "耀", "躍", "濯", "擢"],
+    "components": ["翟"],
     "unlockThreshold": 4,
     "chestRewardCoins": 280,
     "targets": [
