@@ -2541,7 +2541,7 @@ const GameData = (() => {
   const LAYOUT_LABELS = {
     lr: "左右結構",
     tb: "上下結構",
-    tri: "三角／品字結構",
+    tri: "三元結構",
     quad: "四合結構",
     enc: "包圍結構"
   };
