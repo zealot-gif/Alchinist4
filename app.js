@@ -516,6 +516,7 @@ const STAGES_DATA = [
       { "char": "庫", "layout": "enc", "recipes": [["广", "車"]], "hint": "停放兵車之屋，倉庫寶庫" },
       { "char": "座", "layout": "enc", "recipes": [["广", "坐"]], "hint": "屋下二人坐於土上，座位" },
       { "char": "庄", "layout": "enc", "recipes": [["广", "土"]], "hint": "田舍村落，山庄村庄" },
+      { "char": "廂", "layout": "enc", "recipes": [["广", "相"]], "hint": "正室兩旁的側房，廂房包廂" },
       { "char": "反", "layout": "enc", "recipes": [["厂", "又"]], "hint": "手在崖下翻轉，反正反覆" },
       { "char": "灰", "layout": "enc", "recipes": [["厂", "火"]], "hint": "火熄餘燼可手捧，灰燼" },
       { "char": "返", "layout": "enc", "recipes": [["辶", "反"]], "hint": "行而復回，返回往返" },
