@@ -366,14 +366,14 @@ const STAGES_DATA = [
       { "char": "渲", "layout": "lr", "recipes": [["水", "宣"]], "hint": "用水墨或顏料塗抹，渲染" },
       { "char": "萱", "layout": "tb", "recipes": [["艹", "宣"]], "hint": "忘憂草即金針花，亦指代母親，萱草萱堂" },
       { "char": "瑄", "layout": "lr", "recipes": [["玉", "宣"], ["王", "宣"]], "hint": "古代祭天用的大璧玉，瑄玉" },
-      { "char": "諠", "layout": "lr", "recipes": [["言", "宣"]], "hint": "大聲吵鬧喧嘩（訁 + 宣），諠譁（同「喧」）" },
+      { "char": "諠", "layout": "lr", "recipes": [["言", "宣"]], "hint": "大聲吵鬧喧嘩，諠譁（同「喧」）" },
       { "char": "仁", "layout": "lr", "recipes": [["人", "二"]], "hint": "二人相親，仁愛之心" },
       { "char": "叭", "layout": "lr", "recipes": [["口", "八"]], "hint": "口左八右，喇叭聲響" },
       { "char": "只", "layout": "tb", "recipes": [["口", "八"]], "hint": "口上八下，只有一隻" },
       { "char": "汪", "layout": "lr", "recipes": [["水", "王"]], "hint": "水深廣大，汪洋" },
       { "char": "註", "layout": "lr", "recipes": [["言", "主"]], "hint": "以言解說，註解註冊" },
       { "char": "拄", "layout": "lr", "recipes": [["手", "主"]], "hint": "以手支撐，拄拐杖" },
-      { "char": "汴", "layout": "tri", "recipes": [["水", "丶", "下"]], "hint": "古水名（氵 + 丶 + 下），汴京開封" }
+      { "char": "汴", "layout": "tri", "recipes": [["水", "丶", "下"]], "hint": "古水名，汴京開封" }
     ]
   },
   {
