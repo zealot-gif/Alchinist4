@@ -115,7 +115,7 @@ const STAGES_DATA = [
       { "char": "困", "layout": "enc", "recipes": [["囗", "木"]], "hint": "木受方框圍困" },
       { "char": "回", "layout": "enc", "recipes": [["囗", "口"]], "hint": "大口包小口，迂迴返回" },
       { "char": "畑", "layout": "lr", "recipes": [["火", "田"]], "hint": "火耕旱田" },
-      { "char": "思", "layout": "tb", "recipes": [["田", "心"]], "hint": "心念田野，深沉思索" },
+      { "char": "思", "layout": "tb", "recipes": [["田", "心"]], "hint": "心田野，深沉思索" },
       { "char": "磊", "layout": "tri", "recipes": [["石", "石", "石"]], "hint": "三石成磊，光明磊落" },
       { "char": "洄", "layout": "lr", "recipes": [["水", "回"], ["水", "囗", "口"]], "hint": "水流迴旋，洄游" }
     ]
@@ -129,7 +129,7 @@ const STAGES_DATA = [
     "chestRewardCoins": 80,
     "targets": [
       { "char": "相", "layout": "lr", "recipes": [["木", "目"]], "hint": "目視林木，相互觀察" },
-      { "char": "想", "layout": "tb", "recipes": [["相", "心"], ["木", "目", "心"]], "hint": "心中有相，思念想像" },
+      { "char": "想", "layout": "tb", "recipes": [["相", "心"], ["木", "目", "心"]], "hint": "心中有相，思想像" },
       { "char": "省", "layout": "tb", "recipes": [["少", "目"]], "hint": "少目細察，反省節省" },
       { "char": "沙", "layout": "lr", "recipes": [["水", "少"]], "hint": "水少石現，細沙如塵" },
       { "char": "吵", "layout": "lr", "recipes": [["口", "少"]], "hint": "口舌爭執，喧鬧吵雜" },
@@ -1286,9 +1286,9 @@ const STAGES_DATA = [
   },
   {
     "stage": 52,
-    "title": "今念會捨",
+    "title": "今會捨",
     "subtitle": "當下轉念",
-    "components": ["今", "念", "會", "余", "舍"],
+    "components": ["今", "會", "余", "舍"],
     "unlockThreshold": 6,
     "chestRewardCoins": 160,
     "targets": [
@@ -1928,7 +1928,7 @@ const STAGES_DATA = [
     "stage": 81,
     "title": "樽酒酸甜",
     "subtitle": "謙謙君子",
-    "components": ["尊", "奠", "夋", "兼", "廉"],
+    "components": ["尊", "奠", "夋", "兼"],
     "unlockThreshold": 7,
     "chestRewardCoins": 220,
     "targets": [
