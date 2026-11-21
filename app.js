@@ -345,6 +345,7 @@ const STAGES_DATA = [
     "chestRewardCoins": 80,
     "targets": [
       { "char": "王", "layout": "tb", "recipes": [["干", "一"], ["一", "土"]], "hint": "三橫貫通天地人，王者風範" },
+      { "char": "皇", "layout": "tb", "recipes": [["白", "王"]], "hint": "白玉光輝照王者，堂皇皇帝" },
       { "char": "玉", "layout": "enc", "recipes": [["王", "丶"]], "hint": "王者腰間佩美玉" },
       { "char": "主", "layout": "tb", "recipes": [["丶", "王"]], "hint": "燈火一點居王上，一家之主" },
       { "char": "注", "layout": "lr", "recipes": [["水", "主"]], "hint": "水流灌注，專注精神" },
@@ -1423,6 +1424,8 @@ const STAGES_DATA = [
       { "char": "猶", "layout": "lr", "recipes": [["犬", "酋"], ["犬", "八", "酉"]], "hint": "正體「猶」：犭 + 酋（或 犭 + 八 + 酉），猶豫猶如" },
       { "char": "肌", "layout": "lr", "recipes": [["肉", "几"]], "hint": "身軀肌肉，肌膚" },
       { "char": "飢", "layout": "lr", "recipes": [["食", "几"]], "hint": "腹中缺食，飢餓" },
+      { "char": "鳳", "layout": "enc", "recipes": [["几", "鳥"]], "hint": "百鳥之王，鳳凰于飛" },
+      { "char": "凰", "layout": "enc", "recipes": [["几", "皇"]], "hint": "神鳥雌鳳，鳳凰" },
       { "char": "帆", "layout": "lr", "recipes": [["巾", "凡"]], "hint": "船上風帆，一帆風順" },
       { "char": "汎", "layout": "lr", "recipes": [["水", "凡"]], "hint": "水波浮動，廣泛" },
       { "char": "航", "layout": "lr", "recipes": [["舟", "亢"]], "hint": "方舟遠航，航空航海" },
@@ -1996,7 +1999,7 @@ const STAGES_DATA = [
     "stage": 84,
     "title": "奇禽異獸",
     "subtitle": "祥瑞麒麟",
-    "components": ["禽", "獸", "粦", "鳳", "凰"],
+    "components": ["禽", "獸", "粦"],
     "unlockThreshold": 4,
     "chestRewardCoins": 220,
     "targets": [
@@ -2555,13 +2558,11 @@ const STAGES_DATA = [
     "stage": 110,
     "title": "天人合一",
     "subtitle": "造字宗師",
-    "components": ["聖", "鳳", "凰", "國", "寶"],
+    "components": ["聖", "國", "寶"],
     "unlockThreshold": 4,
     "chestRewardCoins": 500,
     "targets": [
       { "char": "聖", "layout": "tri", "recipes": [["耳", "口", "王"]], "hint": "耳聞口傳王者之道，聖賢神聖" },
-      { "char": "鳳", "layout": "enc", "recipes": [["几", "鳥"]], "hint": "百鳥之王，鳳凰于飛" },
-      { "char": "凰", "layout": "enc", "recipes": [["几", "皇"]], "hint": "神鳥雌鳳，鳳凰" },
       { "char": "龝", "layout": "lr", "recipes": [["禾", "龜"]], "hint": "「秋」之古字，禾穀熟如靈龜" },
       { "char": "寶", "layout": "tri", "recipes": [["宀", "玉", "貝"]], "hint": "屋藏美玉與貝幣，墨韻至寶！" }
     ]
