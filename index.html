@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文字大熔爐 × 墨韻活字工坊 — 110 階正體造字進化遊戲</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f172a'/%3E%3Cpath d='M26 8h12v10H26z' fill='%23475569'/%3E%3Cpath d='M12 32c0-11 9-18 20-18s20 7 20 18v20H12V32z' fill='%23334155' stroke='%2394a3b8' stroke-width='2.5'/%3E%3Cpath d='M21 52V38c0-6.5 5-11 11-11s11 4.5 11 11v14H21z' fill='%23f97316'/%3E%3Cpath d='M26 52v-9c0-3.5 2.7-6 6-6s6 2.5 6 6v9H26z' fill='%23fde047'/%3E%3Crect x='8' y='50' width='48' height='6' rx='3' fill='%23fbbf24'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 🔥 初始載入中動畫遮罩 -->
+    <div class="loading-screen" id="loadingScreen" aria-live="polite">
+        <div class="loading-furnace-ring">
+            <span class="loading-spark s1"></span>
+            <span class="loading-spark s2"></span>
+            <span class="loading-spark s3"></span>
+            <div class="loading-furnace-core">🔥</div>
+        </div>
+        <div class="loading-title">文字大熔爐 · 墨韻活字工坊</div>
+        <div class="loading-status" id="loadingStatusText">正在點燃爐火，載入 110 階正體造字庫與雲端進度...</div>
+        <div class="loading-bar-track">
+            <div class="loading-bar-fill" id="loadingBarFill"></div>
+        </div>
+    </div>
+
+    <!-- 頂部導覽列 -->
+    <header>
+        <div class="title-group">
+            <h1>🔥 文字大熔爐 <span style="font-size:0.78rem; color:var(--text-muted);">× 墨韻 110 階造字工坊</span></h1>
+        </div>
+
+        <div class="progress-bar-container" id="btn-open-overview" title="點擊開啟全 110 階造字修行總覽">
+            <span style="font-size:0.8rem; color:var(--text-muted);" id="header-stage-badge">第 1 / 110 階</span>
+            <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            <span style="font-size:0.8rem; font-weight:bold; color:var(--accent-gold);" id="progressText">0 / 1365</span>
+        </div>
+
+        <div class="btn-group">
+            <button type="button" class="btn btn-badge" id="btn-open-guide" title="檢視偏旁變形與雙子星異構字圖鑑">📖 偏旁圖鑑</button>
+            <button type="button" class="btn btn-primary" id="btn-open-pokedex" title="檢視全 110 階主題分類蒐集圖鑑">📜 分類圖鑑</button>
+            <button type="button" class="btn btn-shop" id="btn-open-shop" title="購買三階字理錦囊或信用卡儲值金幣">
+                🛒 商店 <span class="coin-pill">🪙 <span id="header-coins">120</span></span>
+            </button>
+            <button type="button" class="btn" id="btn-open-notice" title="查看最新公告與系統通知">📢 公告</button>
+            <button type="button" class="btn" id="btn-start-tutorial" title="互動式新手教學">❓ 教學</button>
+            <button type="button" class="btn" id="btn-open-auth" title="帳號登入、多帳號切換與雲端同步">
+                <span class="sync-dot" id="sync-dot"></span>
+                <span id="header-username">訪客模式</span>
+                <span class="sync-tag" id="sync-status-tag">本機暫存</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- 主要遊玩區域（左側活字字庫 + 中央熔爐工作檯） -->
+    <main>
+        <!-- 左側：活字字庫 -->
+        <aside class="sidebar">
+            <div class="search-box">
+                <input type="text" id="tile-search" placeholder="搜尋活字部件或已合成字...">
+                <button type="button" class="clear-search-btn" id="btn-clear-search" title="清除搜尋">✕</button>
+            </div>
+            <div class="category-filter" id="filter-tabs">
+                <div class="cat-chip active" data-filter="all">全部可用</div>
+                <div class="cat-chip" data-filter="new">本階新增</div>
+                <div class="cat-chip" data-filter="crafted">已合成字</div>
+                <span class="tile-count-pill" id="tile-count-badge">6</span>
+            </div>
+            <div class="inventory-list" id="tile-grid"></div>
+        </aside>
+
+        <!-- 中央／右側：110 階熔爐合成工作檯 -->
+        <section class="workspace">
+            <div class="log-toast" id="logToast"></div>
+
+            <!-- 階級進度與傳承寶箱橫幅 -->
+            <div class="stage-banner">
+                <div class="stage-info">
+                    <div class="stage-selector-row">
+                        <select id="stage-select" aria-label="選擇遊玩階級"></select>
+                        <span class="stage-subtitle" id="stage-subtitle">自然六象</span>
+                    </div>
+                    <div class="stage-progress-track">
+                        <div class="stage-progress-fill" id="stage-progress-fill" style="width: 0%;"></div>
+                    </div>
+                    <div class="stage-progress-text" id="stage-progress-text">
+                        本階進度：0 / 16（達成 6 字可開啟下階傳承寶箱）
+                    </div>
+                </div>
+
+                <button type="button" class="chest-trigger-btn" id="btn-open-chest">
+                    <span class="chest-emoji" id="chest-btn-emoji">🧰</span>
+                    <span class="chest-btn-text">
+                        <strong id="chest-btn-title">下階傳承寶箱</strong>
+                        <small id="chest-btn-sub">還差 6 字解鎖</small>
+                    </span>
+                </button>
+            </div>
+
+            <!-- 五種漢字結構排版選擇 -->
+            <div class="layout-bar">
+                <span class="layout-label">造字結構：</span>
+                <div class="layout-buttons" id="layout-buttons">
+                    <button type="button" class="layout-btn active" data-layout="lr">⿰ 左右結構</button>
+                    <button type="button" class="layout-btn" data-layout="tb">⿱ 上下結構</button>
+                    <button type="button" class="layout-btn" data-layout="tri">品 三角結構</button>
+                    <button type="button" class="layout-btn" data-layout="quad">田 四合結構</button>
+                    <button type="button" class="layout-btn" data-layout="enc">⿴ 包圍結構</button>
+                </div>
+            </div>
+
+            <!-- 熔爐圓環與動態插槽 -->
+            <div class="furnace-circle" id="furnaceCircle">
+                <div class="furnace-core">🔥</div>
+                <div class="slots-container layout-lr" id="slots-container"></div>
+            </div>
+
+            <!-- 操作按鈕列 -->
+            <div class="action-row">
+                <button type="button" class="combine-btn" id="btn-forge">🔥 投入熔煉造字</button>
+                <button type="button" class="clear-btn" id="btn-swap">⇄ 交換位置</button>
+                <button type="button" class="clear-btn" id="btn-clear-slots">清空爐膛</button>
+            </div>
+
+            <!-- 熔煉即時回饋區 -->
+            <div class="forge-feedback" id="forge-feedback" aria-live="polite">
+                點擊或拖曳左側活字部件至熔爐插槽，選擇正確的造字結構即可煉出正體漢字！
+            </div>
+        </section>
+    </main>
+
+    <!-- 🎯 右側可收合抽屜：本階字譜進度 -->
+    <aside class="quest-drawer" id="questBanner">
+        <button type="button" class="quest-drawer-tab" id="questDrawerTab" title="點擊展開 / 收合本階字譜">
+            <span class="quest-tab-icon">📜</span>
+            <span class="quest-tab-label">字譜</span>
+            <span class="quest-tab-arrow" id="questTabArrow">◀</span>
+        </button>
+        <div class="quest-drawer-panel">
+            <div class="quest-header">
+                <span class="quest-tag" id="target-count-badge">本階字譜 0 / 16</span>
+                <span class="quest-reward">雙子星 +15 🪙</span>
+                <button type="button" class="quest-close-mini" id="btn-close-drawer" title="收合字譜欄">✕</button>
+            </div>
+            <div class="target-list" id="target-list"></div>
+        </div>
+    </aside>
+
+    <!-- 視窗 1：階段傳承寶箱解鎖視窗 -->
+    <div class="modal-overlay" id="chest-modal">
+        <div class="modal-content" style="max-width: 480px; text-align: center;">
+            <div class="modal-header">
+                <h3 id="chest-modal-title">下階傳承寶箱</h3>
+                <button type="button" class="btn" data-close="chest-modal">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="chest-stage-badge" id="chest-modal-badge">第 1 階通關達成</div>
+                <p style="font-size:0.86rem; color:var(--text-muted); line-height:1.5;" id="chest-modal-desc">
+                    點擊下方傳承寶箱，領取階段金幣與下一階的 5 個全新活字部件！
+                </p>
+
+                <div class="chest-visual-stage" id="chest-visual-trigger">
+                    <div class="chest-glow"></div>
+                    <div class="chest-box-art" id="chest-box-art">
+                        <div class="chest-lid"></div>
+                        <div class="chest-body">
+                            <div class="chest-lock" id="chest-lock-label">啟封</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hidden" id="chest-rewards-reveal">
+                    <div class="coin-reward-banner" id="chest-coin-banner">🪙 獲得階段金幣：+60 🪙</div>
+                    <p style="font-size:0.82rem; color:var(--text-muted);">已解鎖下一階全新活字部件：</p>
+                    <div class="new-cards-row" id="chest-new-cards-row"></div>
+                    <button type="button" class="btn btn-primary" style="width:100%; justify-content:center; padding:10px; font-size:0.95rem;" id="btn-chest-continue">
+                        前往下一階繼續熔煉造字
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 視窗 2：商店（三階字理錦囊 + 信用卡金幣儲值） -->
+    <div class="modal-overlay" id="shop-modal">
+        <div class="modal-content" style="max-width: 760px;">
+            <div class="modal-header">
+                <h3>🛒 熔爐錢莊與字理錦囊商店</h3>
+                <button type="button" class="btn" data-close="shop-modal">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="shop-wallet-banner">
+                    <div>
+                        <div style="font-size:0.78rem; color:var(--text-muted);">目前持有金幣餘額</div>
+                        <div class="shop-balance">🪙 <span id="shop-coin-balance">120</span> 枚</div>
+                    </div>
+                    <div style="font-size:0.78rem; color:#fde68a; text-align:right; line-height:1.5;">
+                        ✨ 新字 <strong>+10 🪙</strong> · 🌟 雙子星異構字 <strong>+15 🪙</strong><br>
+                        🧰 啟封階段寶箱可獲 <strong>+60~150 🪙</strong>
+                    </div>
+                </div>
+
+                <div class="shop-tabs">
+                    <button type="button" class="shop-tab-btn active" data-shop-tab="hints">💡 三階字理錦囊</button>
+                    <button type="button" class="shop-tab-btn" data-shop-tab="topup">💳 信用卡儲值金幣</button>
+                </div>
+
+                <!-- 分頁 A：三階字理錦囊 -->
+                <div id="shop-panel-hints">
+                    <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:8px;">
+                        針對目前所在階級（<strong id="hint-current-stage-label" style="color:var(--accent-gold);">第 1 階</strong>）尚未合成的漢字提供字理線索：
+                    </p>
+                    <div class="hint-tier-grid">
+                        <button type="button" class="hint-buy-btn" data-hint-tier="1" data-cost="15">
+                            <span class="hint-tier-name">① 字義暗示</span>
+                            <span class="hint-cost">15 🪙</span>
+                        </button>
+                        <button type="button" class="hint-buy-btn" data-hint-tier="2" data-cost="30">
+                            <span class="hint-tier-name">② 結構與首部</span>
+                            <span class="hint-cost">30 🪙</span>
+                        </button>
+                        <button type="button" class="hint-buy-btn" data-hint-tier="3" data-cost="60">
+                            <span class="hint-tier-name">③ 揭示完整配方</span>
+                            <span class="hint-cost">60 🪙</span>
+                        </button>
+                    </div>
+                    <div style="font-size:0.85rem; font-weight:bold; color:var(--accent-gold); margin:10px 0 6px;">📜 本階已購字理錦囊：</div>
+                    <div id="purchased-hints-list"></div>
+                </div>
+
+                <!-- 分頁 B：信用卡儲值商城 -->
+                <div id="shop-panel-topup" class="hidden">
+                    <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:12px;" id="shop-account-status">
+                        選擇儲值方案並使用 VISA、Mastercard 或 JCB 信用卡結帳，儲值後將即時同步至您的雲端存檔。
+                    </p>
+
+                    <div class="package-grid" id="package-grid">
+                        <div class="pkg-card selected" data-coins="100" data-price="30">
+                            <div class="pkg-coins">100 🪙</div>
+                            <div class="pkg-bonus">入門體驗包</div>
+                            <div class="pkg-price">NT$ 30</div>
+                        </div>
+                        <div class="pkg-card" data-coins="350" data-price="90">
+                            <span class="pkg-tag">熱銷加贈</span>
+                            <div class="pkg-coins">350 🪙</div>
+                            <div class="pkg-bonus">加贈 +50 🪙</div>
+                            <div class="pkg-price">NT$ 90</div>
+                        </div>
+                        <div class="pkg-card" data-coins="800" data-price="180">
+                            <span class="pkg-tag">超值推薦</span>
+                            <div class="pkg-coins">800 🪙</div>
+                            <div class="pkg-bonus">加贈 +200 🪙</div>
+                            <div class="pkg-price">NT$ 180</div>
+                        </div>
+                        <div class="pkg-card" data-coins="1800" data-price="360">
+                            <span class="pkg-tag">宗師御賜</span>
+                            <div class="pkg-coins">1,800 🪙</div>
+                            <div class="pkg-bonus">加贈 +600 🪙</div>
+                            <div class="pkg-price">NT$ 360</div>
+                        </div>
+                    </div>
+
+                    <div class="checkout-split">
+                        <div>
+                            <div class="credit-card-visual" id="cc-visual-card">
+                                <div class="cc-top">
+                                    <div class="cc-chip"></div>
+                                    <div class="cc-network-badge" id="cc-visual-network">CARD</div>
+                                </div>
+                                <div class="cc-number-display" id="cc-visual-number">•••• •••• •••• ••••</div>
+                                <div class="cc-bottom">
+                                    <div>
+                                        <small>CARDHOLDER</small>
+                                        <span id="cc-visual-name">YOUR NAME</span>
+                                    </div>
+                                    <div>
+                                        <small>EXPIRES</small>
+                                        <span id="cc-visual-exp">MM/YY</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accepted-brands">
+                                <span class="brand-badge visa">VISA</span>
+                                <span class="brand-badge mc">Mastercard</span>
+                                <span class="brand-badge jcb">JCB</span>
+                            </div>
+
+                            <div class="test-cards-helper">
+                                <div style="font-size:0.74rem; color:var(--text-muted);">單機測試快捷填卡（符合 Luhn 檢核）：</div>
+                                <div class="test-card-btns">
+                                    <button type="button" class="btn" style="padding:3px 7px; font-size:0.72rem;" data-fill-card="visa">VISA 測試卡</button>
+                                    <button type="button" class="btn" style="padding:3px 7px; font-size:0.72rem;" data-fill-card="mc">Mastercard</button>
+                                    <button type="button" class="btn" style="padding:3px 7px; font-size:0.72rem;" data-fill-card="jcb">JCB 測試卡</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <form id="credit-card-form" novalidate>
+                            <div class="form-group">
+                                <label for="cc-number">信用卡卡號（16 碼）</label>
+                                <input type="text" id="cc-number" inputmode="numeric" maxlength="19" placeholder="4532 0151 1283 0366" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cc-name">持卡人英文姓名</label>
+                                <input type="text" id="cc-name" placeholder="WANG XIAO MING" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="cc-expiry">有效期限 (MM/YY)</label>
+                                    <input type="text" id="cc-expiry" inputmode="numeric" maxlength="5" placeholder="09/29" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cc-cvv">安全碼 (CVV)</label>
+                                    <input type="password" id="cc-cvv" inputmode="numeric" maxlength="4" placeholder="888" required>
+                                </div>
+                            </div>
+
+                            <div class="form-error hidden" id="cc-error"></div>
+
+                            <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; padding:10px; font-size:0.95rem;" id="btn-submit-payment">
+                                確認刷卡付款 NT$ 30
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 視窗 3：帳號登入與雙層存檔管理中心 -->
+    <div class="modal-overlay" id="auth-modal">
+        <div class="modal-content" style="max-width: 520px;">
+            <div class="modal-header">
+                <h3>👤 帳號與跨裝置雲端同步中心</h3>
+                <button type="button" class="btn" data-close="auth-modal">✕</button>
+            </div>
+            <div class="modal-body">
+                <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:12px; line-height:1.5;">
+                    登入個人帳號後，所有 110 階造字進度、寶箱狀態與金幣餘額皆會自動保存於本機並同步至 Google Apps Script 雲端試算表。
+                </p>
+
+                <div class="auth-current-box">
+                    <div>
+                        <span style="font-size:0.76rem; color:var(--text-muted);">目前身分：</span>
+                        <strong style="color:var(--accent-green);" id="auth-active-user">訪客模式（本機暫存）</strong>
+                    </div>
+                    <span class="coin-pill" id="auth-stats-badge">第 1 階 · 0 字 · 120 🪙</span>
+                </div>
+
+                <form id="auth-form" onsubmit="return false;">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="auth-username">使用者帳號名稱</label>
+                            <input type="text" id="auth-username" placeholder="輸入帳號名稱" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="auth-pin">密碼（至少 4 碼）</label>
+                            <input type="password" id="auth-pin" placeholder="輸入密碼" required>
+                        </div>
+                    </div>
+
+                    <div class="form-info hidden" id="auth-msg"></div>
+
+                    <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px;">
+                        <button type="button" class="btn btn-primary" id="btn-cloud-login">🔓 登入帳號（載入雲端）</button>
+                        <button type="button" class="btn" id="btn-cloud-register">✨ 註冊新帳號（綁定進度）</button>
+                        <button type="button" class="btn" style="color:var(--accent-red);" id="btn-logout-guest">🚪 登出切回訪客</button>
+                    </div>
+                </form>
+
+                <div style="border-top:1px solid var(--border-color); padding-top:12px; margin-bottom:12px;">
+                    <div style="font-size:0.84rem; font-weight:bold; color:var(--accent-gold); margin-bottom:6px;">本機曾登入帳號一鍵填入</div>
+                    <div id="saved-accounts-list"></div>
+                </div>
+
+                <div style="border-top:1px solid var(--border-color); padding-top:12px;">
+                    <div style="font-size:0.84rem; font-weight:bold; color:var(--accent-gold); margin-bottom:8px;">手動 JSON 備份檔匯出 / 匯入</div>
+                    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                        <button type="button" class="btn" id="btn-export-json">⬇ 匯出進度備份 (.json)</button>
+                        <label class="btn" style="cursor:pointer;">
+                            ⬆ 匯入進度備份 (.json)
+                            <input type="file" id="input-import-json" accept=".json" hidden>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 視窗 4：偏旁變形規則與雙子星異構字圖鑑 -->
+    <div class="modal-overlay" id="guide-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>📖 偏旁變形規則與雙子星異構字圖鑑</h3>
+                <button type="button" class="btn" data-close="guide-modal">✕</button>
+            </div>
+            <div class="modal-body">
+                <p style="font-size:0.84rem; color:var(--text-muted); margin-bottom:14px; line-height:1.5;">
+                    正體漢字依據部件所在方位（左、右、上、下）會產生筆畫變形；相同部件若改變結構或上下左右順序，更會誕生不同讀音與字義的「雙子星異構字」！
+                </p>
+                <div class="guide-columns">
+                    <div>
+                        <h4 style="color:var(--accent-gold); margin-bottom:8px;">一、常見偏旁方位變形</h4>
+                        <div class="radical-list" id="guide-radical-list"></div>
+                    </div>
+                    <div>
+                        <h4 style="color:var(--accent-gold); margin-bottom:8px;">二、雙子星異構字解析（合成額外 +15 🪙）</h4>
+                        <ul class="distinction-list">
+                            <li><strong>明（左右） vs 朙（上下）</strong>：「日 + 月」左右並列為光明之「明」；上下相疊則為古字「朙」。</li>
+                            <li><strong>杏（木上口下） vs 呆（口上木下）</strong>：同樣是「木」與「口」上下結構，擺放順序對調即成「杏花」與「發呆」。</li>
+                            <li><strong>杲（日上木下） vs 杳（木上日下）</strong>：日出木上為明亮之「杲」；日落木下為幽暗之「杳」。</li>
+                            <li><strong>和（禾左口右） vs 咊（口左禾右）</strong>：左右部件對調，皆讀作 hé，互為異體雙子星。</li>
+                            <li><strong>加（左右結構） vs 另（上下結構）</strong>：「力 + 口」左右並排為「加」；上下相疊則為「另」。</li>
+                            <li><strong>旱（上下結構） vs 旰（左右結構）</strong>：「日 + 干」上下相疊為久晴之「旱」；左右並排則為日暮之「旰」。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 視窗 5：全 110 階主題分類圖鑑蒐集介面（文字大熔爐蒐集圖鑑） -->
+    <div class="modal-overlay" id="pokedex-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>📜 說文解字：110 階主題分類蒐集圖鑑</h3>
+                <button type="button" class="btn" data-close="pokedex-modal">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="pokedex-tabs" id="pokedex-filter-tabs">
+                    <div class="cat-chip active" data-pfilter="all">顯示全部階級主題</div>
+                    <div class="cat-chip" data-pfilter="completed">🏆 已集齊階級</div>
+                    <div class="cat-chip" data-pfilter="unlocked">🔓 已解鎖進行中</div>
+                    <div class="cat-chip" data-pfilter="locked">🔒 尚未解鎖階級</div>
+                </div>
+                <div id="pokedexGroupsContainer"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 視窗 6：全 110 階修行總覽 -->
+    <div class="modal-overlay" id="overview-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>🏯 全 110 階造字修行總覽</h3>
+                <button type="button" class="btn" data-close="overview-modal">✕</button>
+            </div>
+            <div class="modal-body">
+                <p style="font-size:0.84rem; color:var(--text-muted); margin-bottom:12px;" id="overview-summary-text">
+                    點擊已解鎖的階級卡片，可直接切換至該階級進行造字與補齊全圖鑑。
+                </p>
+                <div class="all-stages-grid" id="all-stages-grid"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 視窗 7：最新公告與通知 Modal（保留文字大熔爐公告介面） -->
+    <div class="modal-overlay" id="notice-modal">
+        <div class="modal-content" style="max-width: 520px;">
+            <div class="modal-header">
+                <h3>📢 最新公告與系統通知</h3>
+                <button type="button" class="btn" data-close="notice-modal">✕</button>
+            </div>
+            <div class="modal-body" id="noticeModalBody"></div>
+        </div>
+    </div>
+
+    <!-- 🎓 聚光燈互動式新手教學（保留文字大熔爐教學介面） -->
+    <div class="tutorial-overlay" id="tutorialOverlay">
+        <div class="tutorial-spotlight" id="tutorialSpotlight"></div>
+        <div class="tutorial-card" id="tutorialCard">
+            <div class="tutorial-card-top">
+                <span class="tutorial-step-badge" id="tutorialStepBadge">步驟 1 / 4</span>
+                <button type="button" class="tutorial-skip-btn" id="btn-skip-tutorial">跳過教學 ✕</button>
+            </div>
+            <div class="tutorial-title" id="tutorialTitle"></div>
+            <div class="tutorial-desc" id="tutorialDesc"></div>
+            <div class="tutorial-nav">
+                <button type="button" class="btn" id="tutorialPrevBtn">← 上一步</button>
+                <button type="button" class="btn btn-primary" id="tutorialNextBtn" style="margin-left:auto; padding:6px 16px;">下一步 →</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 整合核心引擎腳本（含 110 階資料庫、雙層存檔、金流接口、公告與教學系統） -->
+    <script src="app.js"></script>
+</body>
+</html>
