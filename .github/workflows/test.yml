@@ -1,10 +1,12 @@
-name: Validate Hanzi Game Data
+name: Validate & Auto-Fix Hanzi Data
 
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   validate:
@@ -17,6 +19,15 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+
+      - name: Auto-fix app.js data
+        run: node autofix.js
+
+      - name: Commit auto-fixed changes if any
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git diff --quiet || (git add app.js && git commit -m "chore: auto-fix stage recipes and duplicates" && git push)
 
       - name: Run stage & recipe validator
         run: node validate.js
