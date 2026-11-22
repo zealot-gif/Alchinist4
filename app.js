@@ -354,6 +354,7 @@ const STAGES_DATA = [
       { "char": "駐", "layout": "lr", "recipes": [["馬", "主"]], "hint": "駿馬停駐，駐守紮營" },
       { "char": "太", "layout": "tb", "recipes": [["大", "丶"]], "hint": "大下添一點，太極至大（注意與「犬」點位不同）" },
       { "char": "犬", "layout": "enc", "recipes": [["大", "丶"]], "hint": "大旁右上添一點，忠犬獵犬" },
+      { "char": "獄", "layout": "tri", "recipes": [["犬", "言", "犬"]], "hint": "雙犬守言訟之所，監獄地嶽" },
       { "char": "旦", "layout": "tb", "recipes": [["日", "一"]], "hint": "紅日躍出地平線，元旦破曉" },
       { "char": "但", "layout": "lr", "recipes": [["人", "旦"]], "hint": "人立於破曉，但是轉折" },
       { "char": "亘", "layout": "tb", "recipes": [["一", "旦"]], "hint": "日月運行於天地之間，綿亘" },
@@ -2039,7 +2040,6 @@ const STAGES_DATA = [
     "targets": [
       { "char": "罰", "layout": "tri", "recipes": [["罒", "言", "刀"]], "hint": "正體「罰」：罒 + 言 + 刂，懲罰罰款" },
       { "char": "則", "layout": "lr", "recipes": [["貝", "刀"]], "hint": "正體「則」：貝 + 刂，法則原則" },
-      { "char": "獄", "layout": "tri", "recipes": [["犬", "言", "犬"]], "hint": "雙犬守言訟之所，監獄地嶽" },
       { "char": "側", "layout": "lr", "recipes": [["人", "則"]], "hint": "人在一旁，側面側重" },
       { "char": "測", "layout": "lr", "recipes": [["水", "則"]], "hint": "測量水深，測試預測" },
       { "char": "廁", "layout": "enc", "recipes": [["广", "則"]], "hint": "屋旁淨室，廁所" },
