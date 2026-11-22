@@ -59,21 +59,8 @@ const STAGES_DATA = [
       { "char": "㵘", "layout": "quad", "recipes": [["水", "水", "水", "水"]], "hint": "四水成㵘，大水漫漫" },
       { "char": "晶", "layout": "tri", "recipes": [["日", "日", "日"]], "hint": "三日成晶，光輝璀璨" },
       { "char": "杰", "layout": "tb", "recipes": [["木", "火"]], "hint": "木下有火（火作灬），豪傑俊杰" },
-      { "char": "伈", "layout": "lr", "recipes": [["人", "心"]], "hint": "人心惶恐（亻 + 心），忐忑之貌" },
       { "char": "琳", "layout": "lr", "recipes": [["水", "林"]], "hint": "水光林影，美玉琳琅（注：通作王旁，此處從水林）" },
-      { "char": "姦", "layout": "tri", "recipes": [["女", "女", "女"]], "hint": "三女相聚，奸邪私通" },
-      { "char": "汩", "layout": "lr", "recipes": [["水", "日"]], "hint": "水流之貌，汩汩流淌（注意右為「日」非「曰」）" },
-      { "char": "汝", "layout": "lr", "recipes": [["水", "女"]], "hint": "古水名，亦作代詞「你」" },
-      { "char": "晏", "layout": "tb", "recipes": [["日", "安"], ["日", "宀", "女"]], "hint": "天清日安，海晏河清" },
-      { "char": "閑", "layout": "enc", "recipes": [["門", "木"]], "hint": "門中有木為柵欄，防範閑習" },
-      { "char": "閒", "layout": "enc", "recipes": [["門", "月"]], "hint": "月光灑入門縫，空閒悠閒" },
-      { "char": "捫", "layout": "lr", "recipes": [["手", "門"]], "hint": "以手撫摸，捫心自問" },
-      { "char": "們", "layout": "lr", "recipes": [["人", "門"]], "hint": "眾人複數，我們你們" },
-      { "char": "佃", "layout": "lr", "recipes": [["人", "田"]], "hint": "租種田地，佃農" },
-      { "char": "宕", "layout": "tb", "recipes": [["宀", "石"]], "hint": "屋下洞石，延宕跌宕" },
-      { "char": "宋", "layout": "tb", "recipes": [["宀", "木"]], "hint": "屋宇居所，宋朝姓氏「宋」" },
-      { "char": "瞐", "layout": "tri", "recipes": [["目", "目", "目"]], "hint": "三目相聚，目深而美" },
-      { "char": "訕", "layout": "lr", "recipes": [["言", "山"]], "hint": "出言譏諷，訕笑搭訕" }
+      { "char": "佃", "layout": "lr", "recipes": [["人", "田"]], "hint": "租種田地，佃農" }
     ]
   },
   {
@@ -85,21 +72,26 @@ const STAGES_DATA = [
     "chestRewardCoins": 70,
     "targets": [
       { "char": "休", "layout": "lr", "recipes": [["人", "木"]], "hint": "人倚木旁，歇息片刻" },
+      { "char": "伈", "layout": "lr", "recipes": [["人", "心"]], "hint": "人心惶恐（亻 + 心），忐忑之貌" },
       { "char": "從", "layout": "lr", "recipes": [["人", "人"]], "hint": "一人隨一人，跟從相隨" },
-      { "char": "眾", "layout": "tri", "recipes": [["人", "人", "人"], ["從", "人"]], "hint": "三人成眾，人群聚集" },
+      { "char": "眾", "layout": "tri", "recipes": [["人", "人", "人"]], "hint": "三人成眾，人群聚集" },
       { "char": "坐", "layout": "tri", "recipes": [["人", "人", "土"]], "hint": "臀部著地或依附在椅子、凳子上休息" },
       { "char": "吅", "layout": "lr", "recipes": [["口", "口"]], "hint": "雙口並排，喧嘩之聲" },
-      { "char": "品", "layout": "tri", "recipes": [["口", "口", "口"], ["吅", "口"]], "hint": "三口成品，品茗評鑑" },
+      { "char": "品", "layout": "tri", "recipes": [["口", "口", "口"]], "hint": "三口成品，品茗評鑑" },
       { "char": "杏", "layout": "tb", "recipes": [["木", "口"]], "twin": "呆", "hint": "木上口下，春日杏花" },
       { "char": "呆", "layout": "tb", "recipes": [["口", "木"]], "twin": "杏", "hint": "口上木下，發愣出神" },
       { "char": "扣", "layout": "lr", "recipes": [["手", "口"]], "hint": "以手相扣，扣門詢問" },
       { "char": "掱", "layout": "tri", "recipes": [["手", "手", "手"]], "hint": "滬人呼翦綹賊曰掱手，猶言扒手也" },
       { "char": "如", "layout": "lr", "recipes": [["女", "口"]], "hint": "女子從口，順從相似" },
       { "char": "伙", "layout": "lr", "recipes": [["人", "火"]], "hint": "人與火伴，同伴伙計" },
-      { "char": "淡", "layout": "lr", "recipes": [["水", "炎"], ["水", "火", "火"]], "hint": "水克炎火，清淡平靜" },
+      { "char": "淡", "layout": "lr", "recipes": [["水", "炎"]], "hint": "水克炎火，清淡平靜" },
       { "char": "佳", "layout": "lr", "recipes": [["人", "圭"]], "hint": "美好出眾，佳節絕佳" },
       { "char": "娃", "layout": "lr", "recipes": [["女", "圭"]], "hint": "幼童與人偶，娃娃女娃" },
       { "char": "哇", "layout": "lr", "recipes": [["口", "圭"]], "hint": "驚嘆擬聲詞，哇塞" },
+      { "char": "姦", "layout": "tri", "recipes": [["女", "女", "女"]], "hint": "三女相聚，奸邪私通" },
+      { "char": "汩", "layout": "lr", "recipes": [["水", "日"]], "hint": "水流之貌，汩汩流淌（注意右為「日」非「曰」）" },
+      { "char": "汝", "layout": "lr", "recipes": [["水", "女"]], "hint": "古水名，亦作代詞「你」" },
+      { "char": "晏", "layout": "tb", "recipes": [["日", "安"]], "hint": "天清日安，海晏河清" },
       { "char": "沁", "layout": "lr", "recipes": [["水", "心"]], "hint": "水入心脾，沁人心肺" }
     ]
   },
@@ -112,18 +104,24 @@ const STAGES_DATA = [
     "chestRewardCoins": 80,
     "targets": [
       { "char": "安", "layout": "tb", "recipes": [["宀", "女"]], "hint": "家中有女，歲月靜安" },
+      { "char": "宕", "layout": "tb", "recipes": [["宀", "石"]], "hint": "屋下洞石，延宕跌宕" },
+      { "char": "宋", "layout": "tb", "recipes": [["宀", "木"]], "hint": "屋宇居所，宋朝姓氏「宋」" },
       { "char": "悶", "layout": "enc", "recipes": [["門", "心"]], "hint": "心鎖門內，煩悶鬱結" },
       { "char": "問", "layout": "enc", "recipes": [["門", "口"]], "hint": "口在門中，叩門請問" },
       { "char": "間", "layout": "enc", "recipes": [["門", "日"]], "hint": "日照門縫，時間空間" },
       { "char": "閃", "layout": "enc", "recipes": [["門", "人"]], "hint": "人在門中一晃而過" },
       { "char": "閨", "layout": "enc", "recipes": [["門", "圭"]], "hint": "女子內室，閨房閨蜜" },
+      { "char": "閑", "layout": "enc", "recipes": [["門", "木"]], "hint": "門中有木為柵欄，防範閑習" },
+      { "char": "閒", "layout": "enc", "recipes": [["門", "月"]], "hint": "月光灑入門縫，空閒悠閒" },
+      { "char": "捫", "layout": "lr", "recipes": [["手", "門"]], "hint": "以手撫摸，捫心自問" },
+      { "char": "們", "layout": "lr", "recipes": [["人", "門"]], "hint": "眾人複數，我們你們" },
       { "char": "囚", "layout": "enc", "recipes": [["囗", "人"]], "hint": "人困四壁之中" },
       { "char": "困", "layout": "enc", "recipes": [["囗", "木"]], "hint": "木受方框圍困" },
       { "char": "回", "layout": "enc", "recipes": [["囗", "口"]], "hint": "大口包小口，迂迴返回" },
       { "char": "畑", "layout": "lr", "recipes": [["火", "田"]], "hint": "火耕旱田" },
       { "char": "思", "layout": "tb", "recipes": [["田", "心"]], "hint": "心田野，深沉思索" },
       { "char": "磊", "layout": "tri", "recipes": [["石", "石", "石"]], "hint": "三石成磊，光明磊落" },
-      { "char": "洄", "layout": "lr", "recipes": [["水", "回"], ["水", "囗", "口"]], "hint": "水流迴旋，洄游" }
+      { "char": "洄", "layout": "lr", "recipes": [["水", "回"]], "hint": "水流迴旋，洄游" }
     ]
   },
   {
@@ -135,10 +133,11 @@ const STAGES_DATA = [
     "chestRewardCoins": 80,
     "targets": [
       { "char": "相", "layout": "lr", "recipes": [["木", "目"]], "hint": "目視林木，相互觀察" },
-      { "char": "想", "layout": "tb", "recipes": [["相", "心"], ["木", "目", "心"]], "hint": "心中有相，思想像" },
+      { "char": "想", "layout": "tb", "recipes": [["相", "心"]], "hint": "心中有相，思想像" },
       { "char": "省", "layout": "tb", "recipes": [["少", "目"]], "twin": "眇", "hint": "少目細察，反省節省" },
       { "char": "眇", "layout": "lr", "recipes": [["目", "少"]], "twin": "省", "hint": "目小微茫，眇小高遠" },
-      { "char": "渺", "layout": "tri", "recipes": [["水", "目", "少"]], "hint": "水波浩大遠望微茫，渺茫飄渺" },
+      { "char": "渺", "layout": "lr", "recipes": [["水", "眇"]], "hint": "水波浩大遠望微茫，渺茫飄渺" },
+      { "char": "瞐", "layout": "tri", "recipes": [["目", "目", "目"]], "hint": "三目相聚，目深而美" },
       { "char": "沙", "layout": "lr", "recipes": [["水", "少"]], "hint": "水少石現，細沙如塵" },
       { "char": "吵", "layout": "lr", "recipes": [["口", "少"]], "hint": "口舌爭執，喧鬧吵雜" },
       { "char": "砂", "layout": "lr", "recipes": [["石", "少"]], "hint": "細小碎石，砂礫成堆" },
@@ -167,6 +166,7 @@ const STAGES_DATA = [
       { "char": "李", "layout": "tb", "recipes": [["木", "子"]], "hint": "木上結子，桃李滿門" },
       { "char": "信", "layout": "lr", "recipes": [["人", "言"]], "hint": "人言為信，誠實守信" },
       { "char": "誩", "layout": "lr", "recipes": [["言", "言"]], "hint": "雙言並立，競相爭辯" },
+      { "char": "訕", "layout": "lr", "recipes": [["言", "山"]], "hint": "出言譏諷，訕笑搭訕" }
       { "char": "尖", "layout": "tb", "recipes": [["小", "大"]], "hint": "上小下大，銳利尖端" },
       { "char": "因", "layout": "enc", "recipes": [["囗", "大"]], "hint": "大在框中，因果緣由" },
       { "char": "奎", "layout": "tb", "recipes": [["大", "圭"]], "hint": "二十八宿之一，奎宿" },
@@ -200,13 +200,13 @@ const STAGES_DATA = [
       { "char": "篎", "layout": "tb", "recipes": [["竹", "眇"]], "hint": "細小的竹管" },
       { "char": "香", "layout": "tb", "recipes": [["禾", "日"]], "hint": "禾穀沐日，散發芬芳" },
       { "char": "雷", "layout": "tb", "recipes": [["雨", "田"]], "hint": "雨落田野，春雷震響" },
-      { "char": "霜", "layout": "tb", "recipes": [["雨", "相"], ["雨", "木", "目"]], "hint": "雨氣凝於草木之上，秋霜皎潔" },
+      { "char": "霜", "layout": "tb", "recipes": [["雨", "相"]], "hint": "雨氣凝於草木之上，秋霜皎潔" },
       { "char": "苜", "layout": "tb", "recipes": [["艹", "目"]], "hint": "牧草之名，苜蓿" },
       { "char": "芯", "layout": "tb", "recipes": [["艹", "心"]], "hint": "燈草中心，燈芯晶片" },
       { "char": "霖", "layout": "tb", "recipes": [["雨", "林"], ["雨", "木", "木"]], "hint": "連日甘雨潤澤山林，甘霖" },
       { "char": "秒", "layout": "lr", "recipes": [["禾", "少"]], "hint": "禾芒細微，分秒必爭" },
       { "char": "委", "layout": "tb", "recipes": [["禾", "女"]], "hint": "禾穀垂穗柔順，委託委婉" },
-      { "char": "莎", "layout": "tb", "recipes": [["艹", "沙"], ["艹", "水", "少"]], "hint": "水邊香草，莎草莎士比亞" }
+      { "char": "莎", "layout": "tb", "recipes": [["艹", "沙"]], "hint": "水邊香草，莎草莎士比亞" }
     ]
   },
   {
@@ -233,7 +233,6 @@ const STAGES_DATA = [
       { "char": "羴", "layout": "tri", "recipes": [["羊", "羊", "羊"]], "hint": "三羊相聚，同「羶」字" },
       { "char": "鱻", "layout": "tri", "recipes": [["魚", "魚", "魚"]], "hint": "三魚相聚，同「鮮」字" },
       { "char": "碼", "layout": "lr", "recipes": [["石", "馬"]], "hint": "計數籌碼，號碼密碼" },
-      { "char": "駕", "layout": "tb", "recipes": [["加", "馬"]], "hint": "駕馭駿馬，駕車凌駕" },
       { "char": "螞", "layout": "lr", "recipes": [["虫", "馬"]], "hint": "群居小蟲，螞蟻螞蚱" }
     ]
   },
@@ -247,7 +246,7 @@ const STAGES_DATA = [
     "targets": [
       { "char": "村", "layout": "lr", "recipes": [["木", "寸"]], "hint": "林木聚落，鄉村田園" },
       { "char": "寺", "layout": "tb", "recipes": [["土", "寸"]], "hint": "土下有寸，古剎佛寺" },
-      { "char": "時", "layout": "lr", "recipes": [["日", "寺"], ["日", "土", "寸"]], "hint": "日照古寺，光陰流轉" },
+      { "char": "時", "layout": "lr", "recipes": [["日", "寺"]], "hint": "日照古寺，光陰流轉" },
       { "char": "付", "layout": "lr", "recipes": [["人", "寸"]], "hint": "以手交予他人，交付付出" },
       { "char": "守", "layout": "tb", "recipes": [["宀", "寸"]], "hint": "屋下法度，堅守守護" },
       { "char": "討", "layout": "lr", "recipes": [["言", "寸"]], "hint": "以言論法度，探討征討" },
@@ -255,6 +254,7 @@ const STAGES_DATA = [
       { "char": "男", "layout": "tb", "recipes": [["田", "力"]], "hint": "田間出力耕作，男子漢" },
       { "char": "功", "layout": "lr", "recipes": [["工", "力"]], "hint": "百工盡力，功績成就" },
       { "char": "加", "layout": "lr", "recipes": [["力", "口"]], "twin": "另", "hint": "力左口右，增添附加" },
+      { "char": "駕", "layout": "tb", "recipes": [["加", "馬"]], "hint": "駕馭駿馬，駕車凌駕" },
       { "char": "架", "layout": "tb", "recipes": [["加", "木"]], "hint": "木構支架，書架架構" },
       { "char": "茄", "layout": "tb", "recipes": [["艹", "加"]], "hint": "草本蔬果，茄子番茄" },
       { "char": "另", "layout": "tb", "recipes": [["口", "力"]], "twin": "加", "hint": "口上力下，另外其他" },
@@ -265,7 +265,7 @@ const STAGES_DATA = [
       { "char": "旰", "layout": "lr", "recipes": [["日", "干"]], "twin": "旱", "hint": "日左干右，日暮晚景" },
       { "char": "早", "layout": "tb", "recipes": [["日", "十"]], "hint": "日出於十，清晨早起" },
       { "char": "古", "layout": "tb", "recipes": [["十", "口"]], "hint": "十口相傳，遠古歷史" },
-      { "char": "苦", "layout": "tb", "recipes": [["艹", "古"], ["艹", "十", "口"]], "hint": "古老草藥，味苦良藥" },
+      { "char": "苦", "layout": "tb", "recipes": [["艹", "古"]], "hint": "古老草藥，味苦良藥" },
       { "char": "計", "layout": "lr", "recipes": [["言", "十"]], "hint": "言語計算，謀略計畫" },
       { "char": "劣", "layout": "tb", "recipes": [["少", "力"]], "hint": "力少氣弱，優劣惡劣" },
       { "char": "汁", "layout": "lr", "recipes": [["水", "十"]], "hint": "液體精華，果汁湯汁" }
@@ -320,10 +320,10 @@ const STAGES_DATA = [
       { "char": "找", "layout": "lr", "recipes": [["手", "戈"]], "hint": "手持干戈，尋找追尋" },
       { "char": "伐", "layout": "lr", "recipes": [["人", "戈"]], "hint": "人持戈矛，征伐砍伐" },
       { "char": "戔", "layout": "tb", "recipes": [["戈", "戈"]], "hint": "雙戈相疊，微少精巧" },
-      { "char": "淺", "layout": "lr", "recipes": [["水", "戔"], ["水", "戈", "戈"]], "hint": "水少而淺，深淺清淺" },
-      { "char": "錢", "layout": "lr", "recipes": [["金", "戔"], ["金", "戈", "戈"]], "hint": "金屬鑄幣，金錢財富" },
+      { "char": "淺", "layout": "lr", "recipes": [["水", "戔"]], "hint": "水少而淺，深淺清淺" },
+      { "char": "錢", "layout": "lr", "recipes": [["金", "戔"]], "hint": "金屬鑄幣，金錢財富" },
       { "char": "泉", "layout": "tb", "recipes": [["白", "水"]], "hint": "清白之水湧出，甘泉清泉" },
-      { "char": "線", "layout": "lr", "recipes": [["糸", "泉"], ["糸", "白", "水"]], "hint": "絲縷如泉水綿延，針線絲線" },
+      { "char": "線", "layout": "lr", "recipes": [["糸", "泉"]], "hint": "絲縷如泉水綿延，針線絲線" },
       { "char": "鳶", "layout": "tb", "recipes": [["戈", "鳥"]], "hint": "猛禽飛鳥，紙鳶老鷹" },
       { "char": "芸", "layout": "tb", "recipes": [["艹", "云"]], "hint": "香草之名，芸芸眾生" },
       { "char": "塊", "layout": "lr", "recipes": [["土", "鬼"]], "hint": "成團土石，方塊一塊" },
