@@ -138,7 +138,7 @@ const STAGES_DATA = [
       { "char": "想", "layout": "tb", "recipes": [["相", "心"], ["木", "目", "心"]], "hint": "心中有相，思想像" },
       { "char": "省", "layout": "tb", "recipes": [["少", "目"]], "twin": "眇", "hint": "少目細察，反省節省" },
       { "char": "眇", "layout": "lr", "recipes": [["目", "少"]], "twin": "省", "hint": "目小微茫，眇小高遠" },
-      { "char": "渺", "layout": "tri", "recipes": [["水", "目", "少"]], "hint": "水波浩大遠望微茫，渺茫飄渺" }
+      { "char": "渺", "layout": "tri", "recipes": [["水", "目", "少"]], "hint": "水波浩大遠望微茫，渺茫飄渺" },
       { "char": "沙", "layout": "lr", "recipes": [["水", "少"]], "hint": "水少石現，細沙如塵" },
       { "char": "吵", "layout": "lr", "recipes": [["口", "少"]], "hint": "口舌爭執，喧鬧吵雜" },
       { "char": "砂", "layout": "lr", "recipes": [["石", "少"]], "hint": "細小碎石，砂礫成堆" },
