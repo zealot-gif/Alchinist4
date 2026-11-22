@@ -2581,7 +2581,7 @@ const STAGES_DATA = [
     "unlockThreshold": 4,
     "chestRewardCoins": 500,
     "targets": [
-      { "char": "影", "layout": "lr", "recipes": [["景", "彡"]], "hint": "日光物影，影子電影" }
+      { "char": "影", "layout": "lr", "recipes": [["景", "彡"]], "hint": "日光物影，影子電影" },
       { "char": "修", "layout": "tri", "recipes": [["人", "攸", "彡"]], "hint": "修飾美好，修養修理" },
       { "char": "彭", "layout": "lr", "recipes": [["壴", "彡"]], "hint": "鼓聲澎湃，姓氏「彭」" },
       { "char": "膨", "layout": "lr", "recipes": [["肉", "彭"]], "hint": "肌肉脹大，膨脹" },
