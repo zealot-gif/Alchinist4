@@ -1070,7 +1070,7 @@ const STAGES_DATA = [
       { "char": "促", "layout": "lr", "recipes": [["人", "足"]], "hint": "緊跟腳步，催促促進" },
       { "char": "法", "layout": "lr", "recipes": [["水", "去"]], "hint": "平如水面去不直，法律方法" },
       { "char": "劫", "layout": "lr", "recipes": [["去", "力"]], "hint": "以力脅迫奪去，劫難" },
-      { "char": "卻", "layout": "lr", "recipes": [["去", "卩"]], "hint": "退卻推辭，忘卻" },
+      { "char": "卻", "layout": "lr", "recipes": [["谷", "卩"]], "hint": "退卻推辭，忘卻" },
       { "char": "腳", "layout": "lr", "recipes": [["肉", "卻"]], "hint": "人身下肢，腳步雙腳" },
       { "char": "屈", "layout": "enc", "recipes": [["尸", "出"]], "hint": "彎曲伸展，屈服委屈" },
       { "char": "掘", "layout": "lr", "recipes": [["手", "屈"]], "hint": "動手挖掘，發掘" },
