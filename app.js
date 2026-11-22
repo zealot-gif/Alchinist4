@@ -2643,6 +2643,437 @@ const STAGES_DATA = [
   }
 ];
 
+// ============================================================================
+// 常見字擴充資料庫：1~110 階缺字回填 + 111~125 階高頻常見字新階級
+// ============================================================================
+const STAGE_PATCH_TARGETS = {
+  1: [
+    { char: "杜", layout: "lr", recipes: [["木", "土"]], hint: "落葉喬木，杜絕杜鵑" },
+    { char: "灶", layout: "lr", recipes: [["火", "土"]], hint: "生火烹煮之處，爐灶灶台" },
+    { char: "昌", layout: "tb", recipes: [["日", "日"]], hint: "日光盛大，昌盛繁昌" }
+  ],
+  2: [
+    { char: "吐", layout: "lr", recipes: [["口", "土"]], hint: "張口吐氣，吐露嘔吐" }
+  ],
+  4: [
+    { char: "看", layout: "tb", recipes: [["手", "目"]], hint: "以手遮目遠望，看見看書" },
+    { char: "泊", layout: "lr", recipes: [["水", "白"]], hint: "舟船停靠水邊，停泊湖泊" },
+    { char: "伯", layout: "lr", recipes: [["人", "白"]], hint: "長兄與父兄，伯父伯仲" },
+    { char: "柏", layout: "lr", recipes: [["木", "白"]], hint: "歲寒常青之木，松柏柏樹" }
+  ],
+  6: [
+    { char: "愁", layout: "tb", recipes: [["秋", "心"]], hint: "秋心寂寥，憂愁愁眉" },
+    { char: "季", layout: "tb", recipes: [["禾", "子"]], hint: "幼禾與時序，季節四季" },
+    { char: "笑", layout: "tb", recipes: [["竹", "天"]], hint: "竹枝搖曳如人歡笑，微笑笑容" },
+    { char: "泄", layout: "lr", recipes: [["水", "世"]], hint: "水液滲出，宣泄發泄" }
+  ],
+  8: [
+    { char: "詩", layout: "lr", recipes: [["言", "寺"]], hint: "心志化為言語韻律，詩歌唐詩" },
+    { char: "等", layout: "tb", recipes: [["竹", "寺"]], hint: "竹簡整齊排列，等待平等" }
+  ],
+  9: [
+    { char: "答", layout: "tb", recipes: [["竹", "合"]], hint: "應聲相合，回答答案" },
+    { char: "拾", layout: "lr", recipes: [["手", "合"]], hint: "伸手撿取，拾取收拾" },
+    { char: "塔", layout: "tri", recipes: [["土", "艹", "合"]], hint: "高聳佛塔建築，寶塔燈塔" },
+    { char: "搭", layout: "tri", recipes: [["手", "艹", "合"]], hint: "動手架設配對，搭配搭乘" }
+  ],
+  12: [
+    { char: "坦", layout: "lr", recipes: [["土", "旦"]], hint: "地面寬廣平直，平坦坦白" },
+    { char: "查", layout: "tb", recipes: [["木", "旦"]], hint: "細心檢視考究，調查檢查" },
+    { char: "碧", layout: "tri", recipes: [["王", "白", "石"]], hint: "青綠色美玉，碧綠金碧輝煌" },
+    { char: "叁", layout: "tb", recipes: [["三", "人"]], hint: "數字三的大寫，叁拾" }
+  ],
+  16: [
+    { char: "利", layout: "lr", recipes: [["禾", "刀"]], hint: "以刀割禾收穫，利益順利" },
+    { char: "梨", layout: "tb", recipes: [["利", "木"]], hint: "甘甜果木，梨子鳳梨" },
+    { char: "刊", layout: "lr", recipes: [["干", "刀"]], hint: "雕刻文字出版，刊物期刊" },
+    { char: "軟", layout: "lr", recipes: [["車", "欠"]], hint: "柔和不硬，柔軟軟體" }
+  ],
+  17: [
+    { char: "岸", layout: "tri", recipes: [["山", "厂", "干"]], hint: "水邊高地，海岸彼岸" },
+    { char: "炭", layout: "tri", recipes: [["山", "厂", "火"]], hint: "燒木成黑燃料，木炭煤炭" },
+    { char: "突", layout: "tb", recipes: [["穴", "犬"]], hint: "犬從穴中猛然竄出，突然突破" }
+  ],
+  20: [
+    { char: "質", layout: "tri", recipes: [["斤", "斤", "貝"]], hint: "衡量財貨本性，品質質問" }
+  ],
+  26: [
+    { char: "料", layout: "lr", recipes: [["米", "斗"]], hint: "以斗量米計算，材料料理" },
+    { char: "類", layout: "tri", recipes: [["米", "犬", "頁"]], hint: "同種相聚，種類分類" }
+  ],
+  30: [
+    { char: "特", layout: "lr", recipes: [["牛", "寺"]], hint: "出眾不凡，特別特色" },
+    { char: "狀", layout: "lr", recipes: [["片", "犬"]], hint: "外貌情形，形狀狀態" }
+  ],
+  33: [
+    { char: "暢", layout: "lr", recipes: [["申", "易"]], hint: "通達無阻，順暢流暢" },
+    { char: "錫", layout: "lr", recipes: [["金", "易"]], hint: "銀白色金屬，錫箔無錫" }
+  ],
+  38: [
+    { char: "腸", layout: "lr", recipes: [["肉", "易"]], hint: "消化器官，腸胃香腸" },
+    { char: "肩", layout: "enc", recipes: [["戶", "肉"]], hint: "臂膀上方，肩膀並肩" },
+    { char: "肯", layout: "tb", recipes: [["止", "肉"]], hint: "筋骨相連與允諾，肯定中肯" },
+    { char: "胖", layout: "lr", recipes: [["肉", "半"]], hint: "體態豐滿，肥胖發胖" },
+    { char: "脫", layout: "lr", recipes: [["肉", "兌"]], hint: "解下離開，脫落擺脫" }
+  ],
+  41: [
+    { char: "踢", layout: "lr", recipes: [["足", "易"]], hint: "舉足蹴擊，踢球踢腿" },
+    { char: "踏", layout: "tri", recipes: [["足", "水", "日"]], hint: "雙足踩地前行，踏步踐踏" }
+  ],
+  45: [
+    { char: "侷", layout: "lr", recipes: [["人", "局"]], hint: "空間狹小受限，侷限侷促" },
+    { char: "筒", layout: "tb", recipes: [["竹", "同"]], hint: "中空竹管，竹筒筆筒" },
+    { char: "桐", layout: "lr", recipes: [["木", "同"]], hint: "落葉喬木，梧桐油桐" }
+  ],
+  46: [
+    { char: "的", layout: "lr", recipes: [["白", "勺"]], hint: "明晰與結構助詞，目的好的" },
+    { char: "約", layout: "lr", recipes: [["糸", "勺"]], hint: "繩索纏束與盟約，約定大約" },
+    { char: "拘", layout: "lr", recipes: [["手", "句"]], hint: "伸手扣留限制，拘束拘留" },
+    { char: "駒", layout: "lr", recipes: [["馬", "句"]], hint: "少壯駿馬，千里駒白駒過隙" },
+    { char: "炮", layout: "lr", recipes: [["火", "包"]], hint: "火藥武器與爆竹，鞭炮大炮" },
+    { char: "袍", layout: "lr", recipes: [["衣", "包"]], hint: "中式長衣，長袍旗袍" }
+  ],
+  49: [
+    { char: "聳", layout: "tb", recipes: [["從", "耳"]], hint: "高高直立，聳立高聳" },
+    { char: "慕", layout: "tb", recipes: [["莫", "心"]], hint: "心中仰望依戀，羨慕愛慕" },
+    { char: "募", layout: "tb", recipes: [["莫", "力"]], hint: "廣泛徵集人力財力，招募募款" }
+  ],
+  52: [
+    { char: "斜", layout: "lr", recipes: [["余", "斗"]], hint: "不正不平，傾斜斜坡" },
+    { char: "塗", layout: "tb", recipes: [["余", "土"]], hint: "以泥抹牆，塗鴉糊塗" },
+    { char: "舖", layout: "lr", recipes: [["舍", "甫"]], hint: "商店與床位，臥舖店舖" }
+  ],
+  55: [
+    { char: "楷", layout: "lr", recipes: [["木", "皆"]], hint: "端正法式，楷書楷模" },
+    { char: "偕", layout: "lr", recipes: [["人", "皆"]], hint: "共同相伴，偕同白頭偕老" }
+  ],
+  57: [
+    { char: "曖", layout: "lr", recipes: [["日", "愛"]], hint: "日光昏暗不明，曖昧" },
+    { char: "匆", layout: "enc", recipes: [["勿", "丶"]], hint: "急促忙迫，匆忙來去匆匆" }
+  ],
+  60: [
+    { char: "仟", layout: "lr", recipes: [["人", "千"]], hint: "數字千的大寫，仟元" },
+    { char: "阡", layout: "lr", recipes: [["阜", "千"]], hint: "田間南北向小路，阡陌" }
+  ],
+  62: [
+    { char: "艷", layout: "lr", recipes: [["豐", "色"]], hint: "色彩濃麗動人，鮮艷驚艷" },
+    { char: "姚", layout: "lr", recipes: [["女", "兆"]], hint: "美好輕盈，姓氏「姚」" }
+  ],
+  70: [
+    { char: "開", layout: "enc", recipes: [["門", "开"]], hint: "雙手推開門閂，打開開始" },
+    { char: "型", layout: "tb", recipes: [["刑", "土"]], hint: "鑄造器物的土模，模型類型" }
+  ],
+  71: [
+    { char: "你", layout: "lr", recipes: [["人", "爾"]], hint: "第二人稱代詞，你好你們" },
+    { char: "您", layout: "tb", recipes: [["你", "心"]], hint: "心懷敬意的「你」，您好" }
+  ],
+  73: [
+    { char: "准", layout: "lr", recipes: [["冫", "隹"]], hint: "允許認可，批准准許" },
+    { char: "維", layout: "lr", recipes: [["糸", "隹"]], hint: "繫物大繩，維護思維" },
+    { char: "唯", layout: "lr", recipes: [["口", "隹"]], hint: "單獨只有，唯一唯獨" },
+    { char: "雖", layout: "tri", recipes: [["口", "虫", "隹"]], hint: "轉折連詞，雖然雖說" },
+    { char: "隻", layout: "tb", recipes: [["隹", "又"]], hint: "手持一鳥，一隻船隻" },
+    { char: "焦", layout: "tb", recipes: [["隹", "火"]], hint: "火烤鳥羽，焦急焦點" },
+    { char: "售", layout: "tb", recipes: [["隹", "口"]], hint: "喊價賣出，出售銷售" }
+  ],
+  86: [
+    { char: "嶽", layout: "tb", recipes: [["山", "獄"]], hint: "高峻大山，五嶽山嶽" },
+    { char: "層", layout: "enc", recipes: [["尸", "曾"]], hint: "重疊的建築樓面，樓層層次" },
+    { char: "僧", layout: "lr", recipes: [["人", "曾"]], hint: "出家修行者，僧侶高僧" }
+  ],
+  92: [
+    { char: "量", layout: "tb", recipes: [["旦", "里"]], hint: "衡量輕重多寡，重量測量" },
+    { char: "糧", layout: "lr", recipes: [["米", "量"]], hint: "穀物食糧，糧食乾糧" }
+  ],
+  104: [
+    { char: "育", layout: "tri", recipes: [["丶", "厶", "肉"]], hint: "生養培育，教育養育" }
+  ],
+  110: [
+    { char: "形", layout: "lr", recipes: [["开", "彡"]], hint: "外在樣貌，形狀形容" },
+    { char: "衫", layout: "lr", recipes: [["衣", "彡"]], hint: "單層上衣，襯衫衣衫" },
+    { char: "須", layout: "lr", recipes: [["彡", "頁"]], hint: "鬍鬚與必要，必須無須" },
+    { char: "彩", layout: "lr", recipes: [["采", "彡"]], hint: "斑斕光色，色彩精彩" }
+  ]
+};
+
+const EXTRA_COMMON_STAGES = [
+  {
+    stage: 111,
+    title: "你我他她",
+    subtitle": "人稱天地",
+    components: ["也", "巴", "失", "臼", "或"],
+    unlockThreshold: 8,
+    chestRewardCoins: 300,
+    targets: [
+      { char: "他", layout: "lr", recipes: [["人", "也"]], hint: "第三人稱代詞，他們他人" },
+      { char: "她", layout: "lr", recipes: [["女", "也"]], hint: "女性第三人稱，她們" },
+      { char: "地", layout: "lr", recipes: [["土", "也"]], hint: "承載萬物之大地，土地地方" },
+      { char: "池", layout: "lr", recipes: [["水", "也"]], hint: "蓄水之塘，池塘泳池" },
+      { char: "馳", layout: "lr", recipes: [["馬", "也"]], hint: "駿馬疾奔，奔馳馳名" },
+      { char: "把", layout: "lr", recipes: [["手", "巴"]], hint: "握持把手，把握一把" },
+      { char: "爸", layout: "tb", recipes: [["父", "巴"]], hint: "父親親長，爸爸" },
+      { char: "吧", layout: "lr", recipes: [["口", "巴"]], hint: "句末語氣詞，好吧走吧" },
+      { char: "肥", layout: "lr", recipes: [["肉", "巴"]], hint: "脂肉豐厚，肥胖肥沃" },
+      { char: "鐵", layout: "lr", recipes: [["金", "失"]], hint: "堅硬金屬（金 + 失），鋼鐵高鐵" },
+      { char: "跌", layout: "lr", recipes: [["足", "失"]], hint: "失足傾倒，跌倒下跌" },
+      { char: "秩", layout: "lr", recipes: [["禾", "失"]], hint: "禾苗整齊有序，秩序" },
+      { char: "舊", layout: "tri", recipes: [["艹", "隹", "臼"]], hint: "陳年往昔，新舊懷舊" },
+      { char: "舅", layout: "tb", recipes: [["臼", "男"]], hint: "母親的兄弟，舅舅" },
+      { char: "國", layout: "enc", recipes: [["囗", "或"]], hint: "疆域城邦，國家祖國" },
+      { char: "域", layout: "lr", recipes: [["土", "或"]], hint: "疆界範圍，領域區域" },
+      { char: "惑", layout: "tb", recipes: [["或", "心"]], hint: "心生疑慮，疑惑困惑" }
+    ]
+  },
+  {
+    stage: 112,
+    title: "江海湖泊",
+    subtitle: "百川歸海",
+    components: ["每", "胡", "昏"],
+    unlockThreshold: 6,
+    chestRewardCoins: 300,
+    targets: [
+      { char: "海", layout: "lr", recipes: [["水", "每"]], hint: "百川匯聚之大洋，大海海洋" },
+      { char: "梅", layout: "lr", recipes: [["木", "每"]], hint: "寒冬傲雪之花，梅花青梅" },
+      { char: "莓", layout: "tb", recipes: [["艹", "每"]], hint: "多汁小果，草莓藍莓" },
+      { char: "敏", layout: "lr", recipes: [["每", "攵"]], hint: "思維迅捷靈巧，敏捷敏感" },
+      { char: "悔", layout: "lr", recipes: [["心", "每"]], hint: "事後懊惱追悔，後悔悔改" },
+      { char: "湖", layout: "lr", recipes: [["水", "胡"]], hint: "陸地大澤，湖泊西湖" },
+      { char: "蝴", layout: "lr", recipes: [["虫", "胡"]], hint: "彩翼飛蟲，蝴蝶" },
+      { char: "糊", layout: "lr", recipes: [["米", "胡"]], hint: "米漿黏合與模糊，漿糊糊塗" },
+      { char: "婚", layout: "lr", recipes: [["女", "昏"]], hint: "黃昏迎娶成親，結婚婚姻" }
+    ]
+  },
+  {
+    stage: 113,
+    title: "才華存否",
+    subtitle: "開閉自如",
+    components: ["才", "不", "介"],
+    unlockThreshold: 6,
+    chestRewardCoins: 310,
+    targets: [
+      { char: "閉", layout: "enc", recipes: [["門", "才"]], hint: "以木閂關門，關閉閉幕" },
+      { char: "材", layout: "lr", recipes: [["木", "才"]], hint: "可用之木料，材料人才" },
+      { char: "財", layout: "lr", recipes: [["貝", "才"]], hint: "金錢寶貝，財富理財" },
+      { char: "在", layout: "tri", recipes: [["才", "一", "土"]], hint: "草木初生於土上，存在現在" },
+      { char: "存", layout: "enc", recipes: [["才", "子"]], hint: "撫育保全，存在保存" },
+      { char: "否", layout: "tb", recipes: [["不", "口"]], hint: "開口否定，是否否則" },
+      { char: "杯", layout: "lr", recipes: [["木", "不"]], hint: "盛水飲器，茶杯杯子" },
+      { char: "界", layout: "tb", recipes: [["田", "介"]], hint: "田畝分界線，世界境界" },
+      { char: "價", layout: "lr", recipes: [["人", "賈"]], hint: "貨物所值，價格價值" }
+    ]
+  },
+  {
+    stage: 114,
+    title: "格物致知",
+    subtitle: "學覺悟道",
+    components: ["爻", "學", "覺"],
+    unlockThreshold: 4,
+    chestRewardCoins: 310,
+    targets: [
+      { char: "攪", layout: "lr", recipes: [["手", "覺"]], hint: "伸手翻動混和，攪拌打攪" },
+      { char: "駁", layout: "lr", recipes: [["馬", "爻"]], hint: "毛色雜錯與辯論，反駁駁斥" },
+      { char: "爽", layout: "tri", recipes: [["大", "爻", "爻"]], hint: "明朗清涼，爽快涼爽" },
+      { char: "希", layout: "tb", recipes: [["爻", "巾"]], hint: "疏朗織紋與盼望，希望稀罕" },
+      { char: "稀", layout: "lr", recipes: [["禾", "希"]], hint: "禾苗疏朗，稀少珍惜" }
+    ]
+  },
+  {
+    stage: 115,
+    title: "風雷雨雪",
+    subtitle: "天地氣象",
+    components: ["電", "雪", "帚", "彐"],
+    unlockThreshold: 6,
+    chestRewardCoins: 320,
+    targets: [
+      { char: "掃", layout: "lr", recipes: [["手", "帚"]], hint: "手持掃帚除塵，打掃掃除" },
+      { char: "婦", layout: "lr", recipes: [["女", "帚"]], hint: "持家女子，婦女夫婦" },
+      { char: "歸", layout: "tri", recipes: [["阜", "止", "帚"]], hint: "返回家園，歸來回歸" },
+      { char: "侵", layout: "tri", recipes: [["人", "彐", "又"]], hint: "漸進越界，侵略入侵" },
+      { char: "浸", layout: "tri", recipes: [["水", "彐", "又"]], hint: "沒入水中潤澤，浸泡沉浸" },
+      { char: "尋", layout: "tri", recipes: [["彐", "工", "寸"]], hint: "伸臂探求，尋找尋覓" },
+      { char: "急", layout: "tb", recipes: [["彐", "心"]], hint: "心緒迫切，著急緊急" },
+      { char: "穩", layout: "lr", recipes: [["禾", "急"]], hint: "禾穀安穩不動，穩定安穩" }
+    ]
+  },
+  {
+    stage: 116,
+    title: "草木巢穴",
+    subtitle: "自然生息",
+    components: ["巢", "枼", "喿"],
+    unlockThreshold: 4,
+    chestRewardCoins: 320,
+    targets: [
+      { char: "草", layout: "tb", recipes: [["艹", "早"]], hint: "原野青草，花草草原" },
+      { char: "碟", layout: "lr", recipes: [["石", "枼"]], hint: "淺平小盤，碗碟光碟" },
+      { char: "蝶", layout: "lr", recipes: [["虫", "枼"]], hint: "翩翩飛舞之蟲，蝴蝶" },
+      { char: "諜", layout: "lr", recipes: [["言", "枼"]], hint: "刺探情報，間諜諜報" },
+      { char: "課", layout: "lr", recipes: [["言", "果"]], hint: "考核學業，功課上課" }
+    ]
+  },
+  {
+    stage: 117,
+    title: "呼吸進取",
+    subtitle: "登峰造極",
+    components: ["及", "取", "最"],
+    unlockThreshold: 6,
+    chestRewardCoins: 330,
+    targets: [
+      { char: "吸", layout: "lr", recipes: [["口", "及"]], hint: "張口納氣，呼吸吸引" },
+      { char: "級", layout: "lr", recipes: [["糸", "及"]], hint: "絲線等次，年級高級" },
+      { char: "極", layout: "lr", recipes: [["木", "及"]], hint: "屋脊最高木樑，極限北極" },
+      { char: "趣", layout: "enc", recipes: [["走", "取"]], hint: "意興盎然，興趣有趣" },
+      { char: "聚", layout: "tb", recipes: [["取", "眾"]], hint: "眾人會合，聚集團聚" },
+      { char: "娶", layout: "tb", recipes: [["取", "女"]], hint: "迎娶新娘，嫁娶" },
+      { char: "撮", layout: "lr", recipes: [["手", "最"]], hint: "以指捏取少許，撮合" }
+    ]
+  },
+  {
+    stage: 118,
+    title: "居處展翼",
+    subtitle: "安身立命",
+    components: ["處", "展", "虍"],
+    unlockThreshold: 5,
+    chestRewardCoins: 330,
+    targets: [
+      { char: "據", layout: "lr", recipes: [["手", "處"]], hint: "憑依佔有，根據證據" },
+      { char: "劇", layout: "lr", recipes: [["處", "刀"]], hint: "戲曲與情節，戲劇劇烈" },
+      { char: "輾", layout: "lr", recipes: [["車", "展"]], hint: "車輪滾壓翻轉，輾轉" },
+      { char: "虎", layout: "enc", recipes: [["虍", "几"]], hint: "山林猛獸，老虎虎嘯" },
+      { char: "虧", layout: "lr", recipes: [["虍", "丂"]], hint: "氣損短缺，吃虧虧欠" }
+    ]
+  },
+  {
+    stage: 119,
+    title: "聖賢心志",
+    subtitle: "憶往知來",
+    components: ["圣", "聖", "億"],
+    unlockThreshold: 4,
+    chestRewardCoins: 340,
+    targets: [
+      { char: "怪", layout: "lr", recipes: [["心", "圣"]], hint: "心覺奇異，奇怪怪物" },
+      { char: "徑", layout: "lr", recipes: [["彳", "巠"]], hint: "小路途徑" },
+      { char: "憶", layout: "lr", recipes: [["心", "意"]], hint: "心中追想往事，記憶回憶" },
+      { char: "億", layout: "lr", recipes: [["人", "意"]], hint: "萬萬為億，億萬" }
+    ]
+  },
+  {
+    stage: 120,
+    title: "器皿鹽梅",
+    subtitle: "調和鼎鼐",
+    components: ["益", "盤", "鹽"],
+    unlockThreshold: 4,
+    chestRewardCoins: 340,
+    targets: [
+      { char: "溢", layout: "lr", recipes: [["水", "益"]], hint: "水滿流出，洋溢溢滿" },
+      { char: "搬", layout: "lr", recipes: [["手", "般"]], hint: "動手遷移，搬家搬運" },
+      { char: "監", layout: "tri", recipes: [["臣", "人", "皿"]], hint: "俯首察視水皿，監督監察" },
+      { char: "盜", layout: "tb", recipes: [["次", "皿"]], hint: "垂涎器皿財物，盜賊" }
+    ]
+  },
+  {
+    stage: 121,
+    title: "身心形體",
+    subtitle: "健步如飛",
+    components: ["臉", "腦", "腿", "退"],
+    unlockThreshold: 4,
+    chestRewardCoins: 350,
+    targets: [
+      { char: "惱", layout: "lr", recipes: [["心", "腦"]], hint: "心中煩悶生氣，煩惱苦惱" },
+      { char: "褪", layout: "lr", recipes: [["衣", "退"]], hint: "脫下衣物與減色，褪色" },
+      { char: "豐", layout: "tb", recipes: [["曲", "豆"]], hint: "禮器盛滿美物，豐富豐收" },
+      { char: "體", layout: "lr", recipes: [["骨", "豐"]], hint: "全身骨骼形骸，身體體育" }
+    ]
+  },
+  {
+    stage: 122,
+    title: "精鋼鎖鑰",
+    subtitle: "銳不可當",
+    components: ["鎖", "銷", "銳", "兌"],
+    unlockThreshold: 4,
+    chestRewardCoins: 350,
+    targets: [
+      { char: "鎖", layout: "lr", recipes: [["金", "貝"]], hint: "金屬門鎖，鎖定封鎖" },
+      { char: "銷", layout: "lr", recipes: [["金", "肖"]], hint: "熔化金屬與售賣，銷售報銷" },
+      { char: "銳", layout: "lr", recipes: [["金", "兌"]], hint: "鋒利敏銳，尖銳精銳" },
+      { char: "悅", layout: "lr", recipes: [["心", "兌"]], hint: "心中喜悅，愉悅喜悅" }
+    ]
+  },
+  {
+    stage: 123,
+    title: "飛鳥游魚",
+    subtitle: "海闊天空",
+    components: ["飛", "鵝", "寵"],
+    unlockThreshold: 4,
+    chestRewardCoins: 360,
+    targets: [
+      { char: "寵", layout: "tb", recipes: [["宀", "龍"]], hint: "屋內尊榮愛護，寵愛寵物" },
+      { char: "鵝", layout: "lr", recipes: [["我", "鳥"]], hint: "長頸水禽，白鵝天鵝" },
+      { char: "我", layout: "lr", recipes: [["手", "戈"]], hint: "第一人稱代詞，我們自我" },
+      { char: "俄", layout: "lr", recipes: [["人", "我"]], hint: "片刻頃刻，俄頃" },
+      { char: "餓", layout: "lr", recipes: [["食", "我"]], hint: "腹中飢餓，飢餓" }
+    ]
+  },
+  {
+    stage: 124,
+    title: "歲月朝暮",
+    subtitle: "四季輪迴",
+    components: ["年", "無", "朝"],
+    unlockThreshold: 5,
+    chestRewardCoins: 380,
+    targets: [
+      { char: "舞", layout: "tb", recipes: [["無", "舛"]], hint: "翩翩起舞，舞蹈跳舞" },
+      { char: "撫", layout: "lr", recipes: [["手", "無"]], hint: "以手安撫觸摸，撫摸安撫" },
+      { char: "潮", layout: "lr", recipes: [["水", "朝"]], hint: "海水早晚漲落，潮水高潮" },
+      { char: "嘲", layout: "lr", recipes: [["口", "朝"]], hint: "言語戲弄，嘲笑自嘲" },
+      { char: "廟", layout: "enc", recipes: [["广", "朝"]], hint: "供奉神明祖先之殿，寺廟廟宇" }
+    ]
+  },
+  {
+    stage: 125,
+    title: "萬象大成",
+    subtitle: "成雙成對",
+    components: ["業", "對", "肖"],
+    unlockThreshold: 4,
+    chestRewardCoins: 500,
+    targets: [
+      { char: "消", layout: "lr", recipes: [["水", "肖"]], hint: "水退散盡，消息消失" },
+      { char: "宵", layout: "tb", recipes: [["宀", "肖"]], hint: "夜深時分，元宵通宵" },
+      { char: "霄", layout: "tb", recipes: [["雨", "肖"]], hint: "雲氣高空，雲霄九霄" },
+      { char: "哨", layout: "lr", recipes: [["口", "肖"]], hint: "吹口發聲，口哨哨兵" },
+      { char: "稍", layout: "lr", recipes: [["禾", "肖"]], hint: "略微一點，稍微稍等" }
+    ]
+  }
+];
+
+// 自動將 STAGE_PATCH_TARGETS 與 EXTRA_COMMON_STAGES 合併進 STAGES_DATA（自動去重）
+(() => {
+  const existingChars = new Set();
+  STAGES_DATA.forEach((st) => st.targets.forEach((t) => existingChars.add(t.char)));
+
+  STAGES_DATA.forEach((st) => {
+    const additions = STAGE_PATCH_TARGETS[st.stage];
+    if (Array.isArray(additions)) {
+      additions.forEach((item) => {
+        if (!existingChars.has(item.char)) {
+          st.targets.push(item);
+          existingChars.add(item.char);
+        }
+      });
+    }
+  });
+
+  EXTRA_COMMON_STAGES.forEach((newStage) => {
+    if (!STAGES_DATA.some((s) => s.stage === newStage.stage)) {
+      newStage.targets = newStage.targets.filter((item) => {
+        if (existingChars.has(item.char)) return false;
+        existingChars.add(item.char);
+        return true;
+      });
+      STAGES_DATA.push(newStage);
+    }
+  });
+})();
+
 // 3. 全 110 階造字查詢與字理輔助引擎 (GameData)
 const GameData = (() => {
   const LAYOUT_LABELS = {
