@@ -46,7 +46,7 @@ const STAGES_DATA = [
       { "char": "森", "layout": "tri", "recipes": [["木", "木", "木"]], "hint": "三木成森，或林中再添一木" },
       { "char": "炎", "layout": "tb", "recipes": [["火", "火"]], "twin": "炏", "hint": "雙火上下相疊，熾熱無比" },
       { "char": "炏", "layout": "lr", "recipes": [["火", "火"]], "twin": "炎", "hint": "雙火左右並排，火光閃耀" },
-      { "char": "焱", "layout": "tri", "recipes": [["火", "火", "火"], ["炎", "火"]], "hint": "三火成焱，火花四射" },
+      { "char": "焱", "layout": "tri", "recipes": [["火", "火", "火"]], "hint": "三火成焱，火花四射" },
       { "char": "圭", "layout": "tb", "recipes": [["土", "土"]], "hint": "雙土上下相疊，古代玉器名" },
       { "char": "桂", "layout": "lr", "recipes": [["木", "圭"]], "hint": "芬芳常綠喬木，桂花肉桂" },
       { "char": "洼", "layout": "lr", "recipes": [["水", "圭"]], "hint": "水深清澈之池，渥洼" },
@@ -59,8 +59,7 @@ const STAGES_DATA = [
       { "char": "㵘", "layout": "quad", "recipes": [["水", "水", "水", "水"]], "hint": "四水成㵘，大水漫漫" },
       { "char": "晶", "layout": "tri", "recipes": [["日", "日", "日"]], "hint": "三日成晶，光輝璀璨" },
       { "char": "杰", "layout": "tb", "recipes": [["木", "火"]], "hint": "木下有火（火作灬），豪傑俊杰" },
-      { "char": "琳", "layout": "lr", "recipes": [["水", "林"]], "hint": "水光林影，美玉琳琅（注：通作王旁，此處從水林）" },
-      { "char": "佃", "layout": "lr", "recipes": [["人", "田"]], "hint": "租種田地，佃農" }
+      { "char": "琳", "layout": "lr", "recipes": [["水", "林"]], "hint": "水光林影，美玉琳琅（注：通作王旁，此處從水林）" }
     ]
   },
   {
@@ -91,7 +90,6 @@ const STAGES_DATA = [
       { "char": "姦", "layout": "tri", "recipes": [["女", "女", "女"]], "hint": "三女相聚，奸邪私通" },
       { "char": "汩", "layout": "lr", "recipes": [["水", "日"]], "hint": "水流之貌，汩汩流淌（注意右為「日」非「曰」）" },
       { "char": "汝", "layout": "lr", "recipes": [["水", "女"]], "hint": "古水名，亦作代詞「你」" },
-      { "char": "晏", "layout": "tb", "recipes": [["日", "安"]], "hint": "天清日安，海晏河清" },
       { "char": "沁", "layout": "lr", "recipes": [["水", "心"]], "hint": "水入心脾，沁人心肺" }
     ]
   },
@@ -104,6 +102,7 @@ const STAGES_DATA = [
     "chestRewardCoins": 80,
     "targets": [
       { "char": "安", "layout": "tb", "recipes": [["宀", "女"]], "hint": "家中有女，歲月靜安" },
+      { "char": "晏", "layout": "tb", "recipes": [["日", "安"]], "hint": "天清日安，海晏河清" },
       { "char": "宕", "layout": "tb", "recipes": [["宀", "石"]], "hint": "屋下洞石，延宕跌宕" },
       { "char": "宋", "layout": "tb", "recipes": [["宀", "木"]], "hint": "屋宇居所，宋朝姓氏「宋」" },
       { "char": "悶", "layout": "enc", "recipes": [["門", "心"]], "hint": "心鎖門內，煩悶鬱結" },
@@ -119,6 +118,7 @@ const STAGES_DATA = [
       { "char": "困", "layout": "enc", "recipes": [["囗", "木"]], "hint": "木受方框圍困" },
       { "char": "回", "layout": "enc", "recipes": [["囗", "口"]], "hint": "大口包小口，迂迴返回" },
       { "char": "畑", "layout": "lr", "recipes": [["火", "田"]], "hint": "火耕旱田" },
+      { "char": "佃", "layout": "lr", "recipes": [["人", "田"]], "hint": "租種田地，佃農" },
       { "char": "思", "layout": "tb", "recipes": [["田", "心"]], "hint": "心田野，深沉思索" },
       { "char": "磊", "layout": "tri", "recipes": [["石", "石", "石"]], "hint": "三石成磊，光明磊落" },
       { "char": "洄", "layout": "lr", "recipes": [["水", "回"]], "hint": "水流迴旋，洄游" }
@@ -203,7 +203,7 @@ const STAGES_DATA = [
       { "char": "霜", "layout": "tb", "recipes": [["雨", "相"]], "hint": "雨氣凝於草木之上，秋霜皎潔" },
       { "char": "苜", "layout": "tb", "recipes": [["艹", "目"]], "hint": "牧草之名，苜蓿" },
       { "char": "芯", "layout": "tb", "recipes": [["艹", "心"]], "hint": "燈草中心，燈芯晶片" },
-      { "char": "霖", "layout": "tb", "recipes": [["雨", "林"], ["雨", "木", "木"]], "hint": "連日甘雨潤澤山林，甘霖" },
+      { "char": "霖", "layout": "tb", "recipes": [["雨", "林"]], "hint": "連日甘雨潤澤山林，甘霖" },
       { "char": "秒", "layout": "lr", "recipes": [["禾", "少"]], "hint": "禾芒細微，分秒必爭" },
       { "char": "委", "layout": "tb", "recipes": [["禾", "女"]], "hint": "禾穀垂穗柔順，委託委婉" },
       { "char": "莎", "layout": "tb", "recipes": [["艹", "沙"]], "hint": "水邊香草，莎草莎士比亞" }
@@ -322,7 +322,6 @@ const STAGES_DATA = [
       { "char": "戔", "layout": "tb", "recipes": [["戈", "戈"]], "hint": "雙戈相疊，微少精巧" },
       { "char": "淺", "layout": "lr", "recipes": [["水", "戔"]], "hint": "水少而淺，深淺清淺" },
       { "char": "錢", "layout": "lr", "recipes": [["金", "戔"]], "hint": "金屬鑄幣，金錢財富" },
-      { "char": "泉", "layout": "tb", "recipes": [["白", "水"]], "hint": "清白之水湧出，甘泉清泉" },
       { "char": "線", "layout": "lr", "recipes": [["糸", "泉"]], "hint": "絲縷如泉水綿延，針線絲線" },
       { "char": "鳶", "layout": "tb", "recipes": [["戈", "鳥"]], "hint": "猛禽飛鳥，紙鳶老鷹" },
       { "char": "芸", "layout": "tb", "recipes": [["艹", "云"]], "hint": "香草之名，芸芸眾生" },
@@ -433,7 +432,7 @@ const STAGES_DATA = [
     "chestRewardCoins": 80,
     "targets": [
       { "char": "正", "layout": "tb", "recipes": [["一", "止"]], "hint": "止於一線，端正正直" },
-      { "char": "是", "layout": "tb", "recipes": [["日", "正"], ["日", "一", "止"]], "hint": "日下端正，是非真理" },
+      { "char": "是", "layout": "tb", "recipes": [["日", "正"]], "hint": "日下端正，是非真理" },
       { "char": "証", "layout": "lr", "recipes": [["言", "正"]], "hint": "正言為証，憑據證明" },
       { "char": "步", "layout": "tb", "recipes": [["止", "少"]], "hint": "雙足前後交替，邁步向前" },
       { "char": "趕", "layout": "enc", "recipes": [["走", "旱"]], "hint": "急走追趕，趕路赴約" },
@@ -475,7 +474,7 @@ const STAGES_DATA = [
       { "char": "盒", "layout": "tb", "recipes": [["合", "皿"]], "hint": "器皿上下相合，錦盒木盒" },
       { "char": "盅", "layout": "tb", "recipes": [["中", "皿"]], "hint": "小巧酒杯，茶盅酒盅" },
       { "char": "缸", "layout": "lr", "recipes": [["缶", "工"]], "hint": "陶製大器，水缸米缸" },
-      { "char": "盞", "layout": "tb", "recipes": [["戔", "皿"], ["戈", "戈", "皿"]], "hint": "小巧酒杯燈具，茶盞燈盞" },
+      { "char": "盞", "layout": "tb", "recipes": [["戔", "皿"]], "hint": "小巧酒杯燈具，茶盞燈盞" },
       { "char": "仿", "layout": "lr", "recipes": [["人", "方"]], "hint": "效法相似，模仿彷彿" },
       { "char": "妨", "layout": "lr", "recipes": [["女", "方"]], "hint": "阻礙損害，妨礙無妨" },
       { "char": "坊", "layout": "lr", "recipes": [["土", "方"]], "hint": "里巷作坊，牌坊街坊" }
@@ -796,6 +795,8 @@ const STAGES_DATA = [
       { "char": "飯", "layout": "lr", "recipes": [["食", "反"]], "hint": "每日三餐米飯" },
       { "char": "飲", "layout": "lr", "recipes": [["食", "欠"]], "hint": "張口喝水，飲食飲料" },
       { "char": "蝕", "layout": "lr", "recipes": [["食", "虫"]], "hint": "蟲蛀侵蝕，日蝕月蝕" },
+      { "char": "飪", "layout": "lr", "recipes": [["食", "任"]], "hint": "烹調煮熟食物，烹飪" },
+      { "char": "餁", "layout": "lr", "recipes": [["食", "任"]], "hint": "食物煮熟，「飪」之異體古字" },
       { "char": "甜", "layout": "lr", "recipes": [["舌", "甘"]], "hint": "舌嘗甘美，甜蜜甘甜" },
       { "char": "柑", "layout": "lr", "recipes": [["木", "甘"]], "hint": "木左甘右，甘美柑橘" },
       { "char": "某", "layout": "tb", "recipes": [["甘", "木"]], "hint": "甘上木下，某人某事" },
@@ -852,8 +853,7 @@ const STAGES_DATA = [
       { "char": "抵", "layout": "lr", "recipes": [["手", "氐"]], "hint": "以手相抗，抵達抵抗" },
       { "char": "零", "layout": "tb", "recipes": [["雨", "令"]], "hint": "細雨飄落，零星歸零" },
       { "char": "鈴", "layout": "lr", "recipes": [["金", "令"]], "hint": "金屬響鈴，風鈴鈴鐺" },
-      { "char": "領", "layout": "lr", "recipes": [["令", "頁"]], "hint": "頸項衣領，領袖帶領" },
-      { "char": "鄰", "layout": "lr", "recipes": [["令", "邑"]], "hint": "比鄰而居，鄰居鄰里" }
+      { "char": "領", "layout": "lr", "recipes": [["令", "頁"]], "hint": "頸項衣領，領袖帶領" }
     ]
   },
   {
@@ -1041,7 +1041,7 @@ const STAGES_DATA = [
       { "char": "謝", "layout": "lr", "recipes": [["言", "射"]], "hint": "謙辭致意，感謝謝謝" },
       { "char": "滑", "layout": "lr", "recipes": [["水", "骨"]], "hint": "水潤如骨，光滑滑行" },
       { "char": "恤", "layout": "lr", "recipes": [["心", "血"]], "hint": "心懷憂憐，體恤撫恤" },
-      { "char": "腐", "layout": "enc", "recipes": [["府", "肉"], ["广", "付", "肉"]], "hint": "肉藏府庫久而變質，豆腐腐敗" },
+      { "char": "腐", "layout": "enc", "recipes": [["府", "肉"]], "hint": "肉藏府庫久而變質，豆腐腐敗" },
       { "char": "息", "layout": "tb", "recipes": [["自", "心"]], "hint": "鼻息與心相通，休息消息" },
       { "char": "臭", "layout": "tb", "recipes": [["自", "犬"]], "hint": "犬鼻靈敏嗅氣味，氣味" },
       { "char": "咱", "layout": "lr", "recipes": [["口", "自"]], "hint": "口稱自己，咱們" }
@@ -1086,12 +1086,12 @@ const STAGES_DATA = [
       { "char": "廷", "layout": "enc", "recipes": [["廴", "壬"]], "hint": "朝廷議政之所" },
       { "char": "庭", "layout": "enc", "recipes": [["广", "廷"]], "hint": "屋宇前院，家庭庭院" },
       { "char": "挺", "layout": "lr", "recipes": [["手", "廷"]], "hint": "伸直挺立，挺拔" },
-      { "char": "街", "layout": "tri", "recipes": [["行", "圭"]], "hint": "大道交會處，街道大街" },
+      { "char": "街", "layout": "enc", "recipes": [["行", "圭"]], "hint": "大道交會處，街道大街" },
       { "char": "衍", "layout": "lr", "recipes": [["行", "水"]], "hint": "水入大道順流，繁衍衍生" },
       { "char": "餉", "layout": "lr", "recipes": [["食", "向"]], "hint": "軍糧薪俸，軍餉" },
       { "char": "客", "layout": "tb", "recipes": [["宀", "各"]], "hint": "遠方來賓入屋，客人作客" },
       { "char": "洛", "layout": "lr", "recipes": [["水", "各"]], "hint": "古水名，洛陽" },
-      { "char": "落", "layout": "tb", "recipes": [["艹", "洛"], ["艹", "水", "各"]], "hint": "草木葉落，降落落葉" },
+      { "char": "落", "layout": "tb", "recipes": [["艹", "洛"]], "hint": "草木葉落，降落落葉" },
       { "char": "格", "layout": "lr", "recipes": [["木", "各"]], "hint": "木條交錯成框，格子風格" }
     ]
   },
@@ -1225,7 +1225,7 @@ const STAGES_DATA = [
       { "char": "飽", "layout": "lr", "recipes": [["食", "包"]], "hint": "腹中滿食，飽滿溫飽" },
       { "char": "泡", "layout": "lr", "recipes": [["水", "包"]], "hint": "水中氣泡，浸泡" },
       { "char": "狗", "layout": "lr", "recipes": [["犬", "句"]], "hint": "忠誠家犬，小狗" },
-      { "char": "夠", "layout": "lr", "recipes": [["句", "多"], ["句", "夕", "夕"]], "hint": "數量充足（句 + 多 或 句 + 夕 + 夕），足夠能夠" }
+      { "char": "夠", "layout": "lr", "recipes": [["多", "句"]], "hint": "數量充足，足夠能夠" }
     ]
   },
   {
@@ -1341,7 +1341,12 @@ const STAGES_DATA = [
       { "char": "含", "layout": "tb", "recipes": [["今", "口"]], "hint": "口中含物，包含含蓄" },
       { "char": "吟", "layout": "lr", "recipes": [["口", "今"]], "hint": "低聲詠唱，吟詩" },
       { "char": "念", "layout": "tb", "recipes": [["今", "心"]], "hint": "心繫當下，思念想念" },
-      { "char": "捻", "layout": "lr", "recipes": [["手", "念"], ["手", "今", "心"]], "hint": "以指搓轉（手 + 念 或 手 + 今 + 心），拿捻" },
+      { "char": "稔", "layout": "lr", "recipes": [["禾", "念"]], "hint": "穀物成熟收成，豐稔熟稔" },
+      { "char": "唸", "layout": "lr", "recipes": [["口", "念"]], "hint": "出聲朗讀，唸書唸經" },
+      { "char": "諗", "layout": "lr", "recipes": [["言", "念"]], "hint": "深思熟慮、告誡，諗知" },
+      { "char": "淰", "layout": "lr", "recipes": [["水", "念"]], "hint": "水波平靜無波、水混濁，淰淰" },
+      { "char": "捻", "layout": "lr", "recipes": [["手", "念"]], "hint": "以指搓轉，拿捻" },
+      { "char": "鯰", "layout": "lr", "recipes": [["魚", "念"]], "hint": "無鱗淡水魚，同「鮎」，鯰魚" },
       { "char": "琴", "layout": "tri", "recipes": [["王", "王", "今"]], "hint": "雙玉弦音，鋼琴古琴" },
       { "char": "繪", "layout": "lr", "recipes": [["糸", "會"]], "hint": "五彩絲繡，繪畫描繪" },
       { "char": "檜", "layout": "lr", "recipes": [["木", "會"]], "hint": "高山神木，紅檜扁柏" },
@@ -1515,7 +1520,7 @@ const STAGES_DATA = [
     "targets": [
       { "char": "陌", "layout": "lr", "recipes": [["阜", "百"]], "hint": "田間小路，陌生阡陌" },
       { "char": "佰", "layout": "lr", "recipes": [["人", "百"]], "hint": "百人之長，大寫百「佰」" },
-      { "char": "宿", "layout": "tb", "recipes": [["宀", "佰"], ["宀", "人", "百"]], "hint": "百人同居屋下（宀 + 佰 或 宀 + 人 + 百），住宿星宿" },
+      { "char": "宿", "layout": "tb", "recipes": [["宀", "佰"]], "hint": "百人同居屋下，住宿星宿" },
       { "char": "邁", "layout": "enc", "recipes": [["辶", "萬"]], "hint": "大步遠行，邁進豪邁" },
       { "char": "勵", "layout": "tri", "recipes": [["厂", "萬", "力"]], "hint": "磨礪勉力，鼓勵激勵" },
       { "char": "執", "layout": "lr", "recipes": [["幸", "丸"]], "hint": "手持捕具，執行執著" },
@@ -1550,8 +1555,8 @@ const STAGES_DATA = [
     "unlockThreshold": 6,
     "chestRewardCoins": 180,
     "targets": [
-      { "char": "霝", "layout": "tb", "recipes": [["雨", "品"], ["雨", "口", "口", "口"]], "hint": "雨落如珠（雨 + 品），「靈」之聲旁" },
-      { "char": "靈", "layout": "tb", "recipes": [["霝", "巫"], ["雨", "品", "巫"]], "hint": "巫祝祈雨降神（霝 + 巫），靈魂心靈" },
+      { "char": "霝", "layout": "tb", "recipes": [["雨", "品"]], "hint": "雨落如珠，「靈」之聲旁" },
+      { "char": "靈", "layout": "tb", "recipes": [["霝", "巫"]], "hint": "巫祝祈雨降神，靈魂心靈" },
       { "char": "察", "layout": "tb", "recipes": [["宀", "祭"]], "hint": "屋內明察秋毫，觀察警察" },
       { "char": "際", "layout": "lr", "recipes": [["阜", "祭"]], "hint": "山崖交界處，邊際國際" },
       { "char": "擦", "layout": "lr", "recipes": [["手", "察"]], "hint": "以手摩擦拭淨，擦拭" },
@@ -1559,9 +1564,7 @@ const STAGES_DATA = [
       { "char": "桃", "layout": "lr", "recipes": [["木", "兆"]], "hint": "春日桃花，桃李" },
       { "char": "逃", "layout": "enc", "recipes": [["辶", "兆"]], "hint": "急步逃離，逃跑逃避" },
       { "char": "跳", "layout": "lr", "recipes": [["足", "兆"]], "hint": "雙足躍起，跳躍跳舞" },
-      { "char": "挑", "layout": "lr", "recipes": [["手", "兆"]], "hint": "肩挑手選，挑選挑戰" },
-      { "char": "喧", "layout": "lr", "recipes": [["口", "宣"]], "hint": "大聲喧嘩，喧鬧" },
-      { "char": "渲", "layout": "lr", "recipes": [["水", "宣"]], "hint": "水墨暈染，渲染" }
+      { "char": "挑", "layout": "lr", "recipes": [["手", "兆"]], "hint": "肩挑手選，挑選挑戰" }
     ]
   },
   {
@@ -2359,9 +2362,9 @@ const STAGES_DATA = [
     "unlockThreshold": 9,
     "chestRewardCoins": 250,
     "targets": [
-      { "char": "秝", "layout": "lr", "recipes": [["禾", "禾"]], "hint": "雙禾並立，稀疏均勻（「曆、歷」之字心）" },
-      { "char": "曆", "layout": "enc", "recipes": [["厂", "禾", "禾", "日"], ["厂", "秝", "日"]], "hint": "觀象授時（厂 + 禾 + 禾 + 日），日曆歷史" },
-      { "char": "歷", "layout": "enc", "recipes": [["厂", "禾", "禾", "止"], ["厂", "秝", "止"]], "hint": "邁步經過（厂 + 禾 + 禾 + 止），經歷歷史" },
+      { "char": "秝", "layout": "lr", "recipes": [["禾", "禾"]], "hint": "雙禾並立，稀疏均勻）" },
+      { "char": "曆", "layout": "tri", "recipes": [["厂", "秝", "日"]], "hint": "觀象授時，日曆曆法" },
+      { "char": "歷", "layout": "tri", "recipes": [["厂", "秝", "止"]], "hint": "邁步經過，經歷歷史" },
       { "char": "招", "layout": "lr", "recipes": [["手", "召"]], "hint": "揮手呼喚，招呼招待" },
       { "char": "照", "layout": "tri", "recipes": [["日", "召", "火"]], "hint": "日光火光照耀，照顧照片" },
       { "char": "紹", "layout": "lr", "recipes": [["糸", "召"]], "hint": "相繼傳承，介紹" },
