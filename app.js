@@ -72,7 +72,7 @@ const STAGES_DATA = [
     "chestRewardCoins": 70,
     "targets": [
       { "char": "休", "layout": "lr", "recipes": [["人", "木"]], "hint": "人倚木旁，歇息片刻" },
-      { "char": "伈", "layout": "lr", "recipes": [["人", "心"]], "hint": "人心惶恐（亻 + 心），忐忑之貌" },
+      { "char": "伈", "layout": "lr", "recipes": [["人", "心"]], "hint": "人心惶恐，忐忑之貌" },
       { "char": "從", "layout": "lr", "recipes": [["人", "人"]], "hint": "一人隨一人，跟從相隨" },
       { "char": "眾", "layout": "tri", "recipes": [["人", "人", "人"]], "hint": "三人成眾，人群聚集" },
       { "char": "坐", "layout": "tri", "recipes": [["人", "人", "土"]], "hint": "臀部著地或依附在椅子、凳子上休息" },
@@ -166,7 +166,7 @@ const STAGES_DATA = [
       { "char": "李", "layout": "tb", "recipes": [["木", "子"]], "hint": "木上結子，桃李滿門" },
       { "char": "信", "layout": "lr", "recipes": [["人", "言"]], "hint": "人言為信，誠實守信" },
       { "char": "誩", "layout": "lr", "recipes": [["言", "言"]], "hint": "雙言並立，競相爭辯" },
-      { "char": "訕", "layout": "lr", "recipes": [["言", "山"]], "hint": "出言譏諷，訕笑搭訕" }
+      { "char": "訕", "layout": "lr", "recipes": [["言", "山"]], "hint": "出言譏諷，訕笑搭訕" },
       { "char": "尖", "layout": "tb", "recipes": [["小", "大"]], "hint": "上小下大，銳利尖端" },
       { "char": "因", "layout": "enc", "recipes": [["囗", "大"]], "hint": "大在框中，因果緣由" },
       { "char": "奎", "layout": "tb", "recipes": [["大", "圭"]], "hint": "二十八宿之一，奎宿" },
