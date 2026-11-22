@@ -149,7 +149,7 @@ const STAGES_DATA = [
       { "char": "迫", "layout": "enc", "recipes": [["辶", "白"]], "hint": "急步逼近，緊迫從容" },
       { "char": "仙", "layout": "lr", "recipes": [["人", "山"]], "hint": "人在山中修道成仙" },
       { "char": "岩", "layout": "tb", "recipes": [["山", "石"]], "hint": "山崖巨石，岩石峭壁" },
-      { "char": "迴", "layout": "enc", "recipes": [["辶", "回"], ["辶", "囗", "口"]], "hint": "曲折返回，迴響輪迴" },
+      { "char": "迴", "layout": "enc", "recipes": [["辶", "回"]], "hint": "曲折返回，迴響輪迴" },
       { "char": "泉", "layout": "tb", "recipes": [["白", "水"]], "hint": "清白之水湧出，甘泉清泉" }
     ]
   },
