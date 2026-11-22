@@ -1747,6 +1747,7 @@ const STAGES_DATA = [
     "chestRewardCoins": 200,
     "targets": [
       { "char": "雞", "layout": "lr", "recipes": [["奚", "隹"]], "hint": "正體「雞」：奚 + 隹（短尾鳥），公雞母雞" },
+      { "char": "谿", "layout": "lr", "recipes": [["谷", "奚"]], "hint": "山谷間的流水，同「溪」，幽谿" },
       { "char": "誰", "layout": "lr", "recipes": [["言", "隹"]], "hint": "出言發問，是誰" },
       { "char": "翟", "layout": "tb", "recipes": [["羽", "隹"]], "hint": "長尾山雉，姓氏「翟」" },
       { "char": "曜", "layout": "lr", "recipes": [["日", "翟"]], "hint": "日月星辰七曜，照曜" },
