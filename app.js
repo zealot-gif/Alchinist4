@@ -1388,7 +1388,12 @@ const STAGES_DATA = [
       { "char": "導", "layout": "tb", "recipes": [["道", "寸"]], "hint": "循道指引，引導指導" },
       { "char": "需", "layout": "tb", "recipes": [["雨", "而"]], "hint": "遇雨待晴，需要需求" },
       { "char": "儒", "layout": "lr", "recipes": [["人", "需"]], "hint": "溫文博學之士，儒家儒雅" },
-      { "char": "濡", "layout": "lr", "recipes": [["水", "需"]], "hint": "水氣浸潤，耳濡目染" },
+      { "char": "嚅", "layout": "lr", "recipes": [["口", "需"]], "hint": "欲言又止之貌，囁嚅" },
+      { "char": "孺", "layout": "lr", "recipes": [["子", "需"]], "hint": "幼小的孩子，孺子可教" },
+      { "char": "懦", "layout": "lr", "recipes": [["心", "需"]], "hint": "心性軟弱膽怯，懦弱" },
+      { "char": "濡", "layout": "lr", "recipes": [["水", "需"]], "hint": "水氣沾濕潤澤，相濡以沫、耳濡目染" },
+      { "char": "糯", "layout": "lr", "recipes": [["米", "需"]], "hint": "黏性高的稻米，糯米" },
+      { "char": "蠕", "layout": "lr", "recipes": [["虫", "需"]], "hint": "如蟲般緩慢爬動，蠕動" },
       { "char": "媚", "layout": "lr", "recipes": [["女", "眉"]], "hint": "眉目含情，明媚嫵媚" }
     ]
   },
