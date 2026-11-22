@@ -1743,6 +1743,13 @@ const STAGES_DATA = [
     "targets": [
       { "char": "雞", "layout": "lr", "recipes": [["奚", "隹"]], "hint": "正體「雞」：奚 + 隹（短尾鳥），公雞母雞" },
       { "char": "誰", "layout": "lr", "recipes": [["言", "隹"]], "hint": "出言發問，是誰" },
+      { "char": "翟", "layout": "tb", "recipes": [["羽", "隹"]], "hint": "長尾山雉，姓氏「翟」" },
+      { "char": "曜", "layout": "lr", "recipes": [["日", "翟"]], "hint": "日月星辰七曜，照曜" },
+      { "char": "耀", "layout": "lr", "recipes": [["光", "翟"]], "hint": "光芒四射，榮耀閃耀" },
+      { "char": "躍", "layout": "lr", "recipes": [["足", "翟"]], "hint": "騰足跳起，飛躍跳躍" },
+      { "char": "濯", "layout": "lr", "recipes": [["水", "翟"]], "hint": "以水洗滌，洗濯" },
+      { "char": "擢", "layout": "lr", "recipes": [["手", "翟"]], "hint": "伸手拔起，拔擢提拔" },
+      { "char": "戳", "layout": "lr", "recipes": [["翟", "戈"]], "hint": "刺擊與印記，郵戳圖戳" }
       { "char": "推", "layout": "lr", "recipes": [["手", "隹"]], "hint": "伸手向前推動，推廣推理" },
       { "char": "堆", "layout": "lr", "recipes": [["土", "隹"]], "hint": "土石聚積，堆積土堆" },
       { "char": "集", "layout": "tb", "recipes": [["隹", "木"]], "hint": "群鳥棲息木上，集合收集" },
@@ -2216,19 +2223,14 @@ const STAGES_DATA = [
     "stage": 94,
     "title": "嘉禮喜慶",
     "subtitle": "神采飛揚",
-    "components": ["喜", "壴", "彡", "惠", "彗"],
+    "components": ["喜", "惠", "彗"],
     "unlockThreshold": 5,
     "chestRewardCoins": 240,
     "targets": [
-      { "char": "彭", "layout": "lr", "recipes": [["壴", "彡"]], "hint": "鼓聲澎湃（壴 + 彡），姓氏「彭」" },
-      { "char": "膨", "layout": "lr", "recipes": [["肉", "彭"]], "hint": "肌肉脹大，膨脹" },
-      { "char": "澎", "layout": "lr", "recipes": [["水", "彭"]], "hint": "波濤洶湧，澎湃澎湖" },
       { "char": "囍", "layout": "lr", "recipes": [["喜", "喜"]], "hint": "雙喜臨門，大喜之日" },
       { "char": "嘻", "layout": "lr", "recipes": [["口", "喜"]], "hint": "笑語嘻嘻，嘻笑" },
       { "char": "禧", "layout": "lr", "recipes": [["示", "喜"]], "hint": "神賜吉祥，新禧福禧" },
       { "char": "嬉", "layout": "lr", "recipes": [["女", "喜"]], "hint": "女子嬉戲，嬉鬧" },
-      { "char": "樹", "layout": "tri", "recipes": [["木", "壴", "寸"]], "hint": "植木成林，樹木樹立" },
-      { "char": "廚", "layout": "tri", "recipes": [["广", "壴", "寸"]], "hint": "烹調之屋，廚房" },
       { "char": "穗", "layout": "lr", "recipes": [["禾", "惠"]], "hint": "稻禾結穗，稻穗" },
       { "char": "慧", "layout": "tb", "recipes": [["彗", "心"]], "hint": "心如掃帚拂塵而明，智慧聰慧" }
     ]
@@ -2249,17 +2251,15 @@ const STAGES_DATA = [
       { "char": "顫", "layout": "lr", "recipes": [["亶", "頁"]], "hint": "身體抖動，顫抖" },
       { "char": "篇", "layout": "tb", "recipes": [["竹", "扁"]], "hint": "竹簡成篇，篇章篇幅" },
       { "char": "偏", "layout": "lr", "recipes": [["人", "扁"]], "hint": "側向一旁，偏心偏偏" },
-      { "char": "修", "layout": "tri", "recipes": [["人", "攸", "彡"]], "hint": "修飾美好（亻 + 攸 + 彡），修養修理" },
       { "char": "悠", "layout": "tb", "recipes": [["攸", "心"]], "hint": "心緒長遠（攸 + 心），悠久悠閒" },
       { "char": "條", "layout": "tb", "recipes": [["攸", "木"]], "hint": "細長木枝（攸 + 木），條件麵條" },
-      { "char": "影", "layout": "lr", "recipes": [["景", "彡"]], "hint": "日光物影（景 + 彡），影子電影" }
     ]
   },
   {
     "stage": 96,
     "title": "玉器方圓",
     "subtitle": "匯聚群英",
-    "components": ["耑", "疌", "翏", "盍", "匚"],
+    "components": ["耑", "疌", "盍", "匚"],
     "unlockThreshold": 7,
     "chestRewardCoins": 250,
     "targets": [
@@ -2269,8 +2269,6 @@ const STAGES_DATA = [
       { "char": "揣", "layout": "lr", "recipes": [["手", "耑"]], "hint": "懷藏揣摩，揣測" },
       { "char": "捷", "layout": "lr", "recipes": [["手", "疌"]], "hint": "動作敏捷，快捷捷報" },
       { "char": "睫", "layout": "lr", "recipes": [["目", "疌"]], "hint": "眼瞼毛髮，睫毛" },
-      { "char": "膠", "layout": "lr", "recipes": [["肉", "翏"]], "hint": "黏合之物，膠水橡膠" },
-      { "char": "謬", "layout": "lr", "recipes": [["言", "翏"]], "hint": "荒唐錯誤，荒謬謬論" },
       { "char": "蓋", "layout": "tb", "recipes": [["艹", "盍"]], "hint": "茅草覆屋，蓋子覆蓋" },
       { "char": "磕", "layout": "lr", "recipes": [["石", "盍"]], "hint": "石頭相碰，磕頭" },
       { "char": "匪", "layout": "enc", "recipes": [["匚", "非"]], "hint": "行為非正，匪徒" },
@@ -2530,18 +2528,24 @@ const STAGES_DATA = [
   },
   {
     "stage": 108,
-    "title": "星漢燦爛",
-    "subtitle": "飛躍雲霄",
-    "components": ["翟"],
-    "unlockThreshold": 4,
+    "title": "自我貶於",
+    "subtitle": "自我貶於",
+    "components": ["翏"],
+    "unlockThreshold": 6,
     "chestRewardCoins": 280,
     "targets": [
-      { "char": "曜", "layout": "lr", "recipes": [["日", "翟"]], "hint": "日月星辰七曜，照曜" },
-      { "char": "耀", "layout": "lr", "recipes": [["光", "翟"]], "hint": "光芒四射，榮耀閃耀" },
-      { "char": "躍", "layout": "lr", "recipes": [["足", "翟"]], "hint": "騰足跳起，飛躍跳躍" },
-      { "char": "濯", "layout": "lr", "recipes": [["水", "翟"]], "hint": "以水洗滌，洗濯" },
-      { "char": "擢", "layout": "lr", "recipes": [["手", "翟"]], "hint": "伸手拔起，拔擢提拔" },
-      { "char": "戳", "layout": "lr", "recipes": [["翟", "戈"]], "hint": "刺擊與印記，郵戳圖戳" }
+      { "char": "寥", "layout": "tb", "recipes": [["宀", "翏"]], "hint": "屋宇空曠寂靜，寥闊寂寥" },
+      { "char": "廖", "layout": "enc", "recipes": [["广", "翏"]], "hint": "人名與姓氏用字，亦通「寥」" },
+      { "char": "瘳", "layout": "enc", "recipes": [["疒", "翏"]], "hint": "疾病痊癒好轉，病瘳" },
+      { "char": "戮", "layout": "lr", "recipes": [["翏", "戈"]], "hint": "揮戈殺伐，殺戮刑戮" },
+      { "char": "蓼", "layout": "tb", "recipes": [["艹", "翏"]], "hint": "水邊草本植物，水蓼、姓氏「蓼」" },
+      { "char": "繆", "layout": "lr", "recipes": [["糸", "翏"]], "hint": "絲線纏繞緊密，綢繆紕繆" },
+      { "char": "醪", "layout": "lr", "recipes": [["酉", "翏"]], "hint": "帶有酒渣的濃厚濁酒，醇醪" },
+      { "char": "嫪", "layout": "lr", "recipes": [["女", "翏"]], "hint": "愛戀與古人名用字，嫪毐" },
+      { "char": "僇", "layout": "lr", "recipes": [["人", "翏"]], "hint": "羞辱與刑罰，通「戮」字" },
+      { "char": "轇", "layout": "lr", "recipes": [["車", "翏"]], "hint": "車馬交錯縱橫，轇輵糾纏" },
+      { "char": "嘐", "layout": "lr", "recipes": [["口", "翏"]], "hint": "大言自誇與喧嘩，志大言大嘐嘐" },
+      { "char": "勠", "layout": "lr", "recipes": [["翏", "力"]], "hint": "合力並進，勠力同心" }
     ]
   },
   {
@@ -2549,7 +2553,7 @@ const STAGES_DATA = [
     "title": "登高望遠",
     "subtitle": "渺目千里",
     "components": ["婁"],
-    "unlockThreshold": 4,
+    "unlockThreshold": 10,
     "chestRewardCoins": 290,
     "targets": [
       { "char": "樓", "layout": "lr", "recipes": [["木", "婁"]], "hint": "重屋高閣，高樓一樓" },
@@ -2571,15 +2575,19 @@ const STAGES_DATA = [
   },
   {
     "stage": 110,
-    "title": "天人合一",
-    "subtitle": "造字宗師",
-    "components": ["聖", "國", "寶"],
+    "title": "料理大魚",
+    "subtitle": "夜長夢多",
+    "components": ["彡", "壴"],
     "unlockThreshold": 4,
     "chestRewardCoins": 500,
     "targets": [
-      { "char": "聖", "layout": "tri", "recipes": [["耳", "口", "王"]], "hint": "耳聞口傳王者之道，聖賢神聖" },
-      { "char": "龝", "layout": "lr", "recipes": [["禾", "龜"]], "hint": "「秋」之古字，禾穀熟如靈龜" },
-      { "char": "寶", "layout": "tri", "recipes": [["宀", "玉", "貝"]], "hint": "屋藏美玉與貝幣，墨韻至寶！" }
+      { "char": "影", "layout": "lr", "recipes": [["景", "彡"]], "hint": "日光物影，影子電影" }
+      { "char": "修", "layout": "tri", "recipes": [["人", "攸", "彡"]], "hint": "修飾美好，修養修理" },
+      { "char": "彭", "layout": "lr", "recipes": [["壴", "彡"]], "hint": "鼓聲澎湃，姓氏「彭」" },
+      { "char": "膨", "layout": "lr", "recipes": [["肉", "彭"]], "hint": "肌肉脹大，膨脹" },
+      { "char": "澎", "layout": "lr", "recipes": [["水", "彭"]], "hint": "波濤洶湧，澎湃澎湖" },
+      { "char": "樹", "layout": "tri", "recipes": [["木", "壴", "寸"]], "hint": "植木成林，樹木樹立" },
+      { "char": "廚", "layout": "tri", "recipes": [["广", "壴", "寸"]], "hint": "烹調之屋，廚房" }
     ]
   }
 ];
