@@ -221,6 +221,7 @@ const STAGES_DATA = [
       { "char": "羴", "layout": "tri", "recipes": [["羊", "羊", "羊"]], "hint": "三羊相聚，同「羶」字" },
       { "char": "鱻", "layout": "tri", "recipes": [["魚", "魚", "魚"]], "hint": "三魚相聚，同「鮮」字" },
       { "char": "碼", "layout": "lr", "recipes": [["石", "馬"]], "hint": "計數籌碼，號碼密碼" },
+      { "char": "駕", "layout": "tb", "recipes": [["加", "馬"]], "hint": "駕馭駿馬，駕車凌駕" },
       { "char": "螞", "layout": "lr", "recipes": [["虫", "馬"]], "hint": "群居小蟲，螞蟻螞蚱" }
     ]
   },
@@ -242,6 +243,8 @@ const STAGES_DATA = [
       { "char": "男", "layout": "tb", "recipes": [["田", "力"]], "hint": "田間出力耕作，男子漢" },
       { "char": "功", "layout": "lr", "recipes": [["工", "力"]], "hint": "百工盡力，功績成就" },
       { "char": "加", "layout": "lr", "recipes": [["力", "口"]], "twin": "另", "hint": "力左口右，增添附加" },
+      { "char": "架", "layout": "tb", "recipes": [["加", "木"]], "hint": "木構支架，書架架構" },
+      { "char": "茄", "layout": "tb", "recipes": [["艹", "加"]], "hint": "草本蔬果，茄子番茄" },
       { "char": "另", "layout": "tb", "recipes": [["口", "力"]], "twin": "加", "hint": "口上力下，另外其他" },
       { "char": "虹", "layout": "lr", "recipes": [["虫", "工"]], "hint": "雨後長虹，如龍飲水" },
       { "char": "江", "layout": "lr", "recipes": [["水", "工"]], "hint": "大水奔流，長江大河" },
@@ -345,6 +348,7 @@ const STAGES_DATA = [
     "chestRewardCoins": 80,
     "targets": [
       { "char": "王", "layout": "tb", "recipes": [["干", "一"], ["一", "土"]], "hint": "三橫貫通天地人，王者風範" },
+      { "char": "珈", "layout": "lr", "recipes": [["王", "加"]], "hint": "古代婦人玉飾，珈藍" }
       { "char": "皇", "layout": "tb", "recipes": [["白", "王"]], "hint": "白玉光輝照王者，堂皇皇帝" },
       { "char": "玉", "layout": "enc", "recipes": [["王", "丶"]], "hint": "王者腰間佩美玉" },
       { "char": "主", "layout": "tb", "recipes": [["丶", "王"]], "hint": "燈火一點居王上，一家之主" },
@@ -591,6 +595,7 @@ const STAGES_DATA = [
     "chestRewardCoins": 100,
     "targets": [
       { "char": "貼", "layout": "lr", "recipes": [["貝", "占"]], "hint": "以財物抵押黏貼" },
+      { "char": "賀", "layout": "tb", "recipes": [["加", "貝"]], "hint": "奉財相慶，祝賀道賀" },
       { "char": "販", "layout": "lr", "recipes": [["貝", "反"]], "hint": "買賣貨財，小販販賣" },
       { "char": "員", "layout": "tb", "recipes": [["口", "貝"]], "hint": "以口清點貝幣，人員成員" },
       { "char": "圓", "layout": "enc", "recipes": [["囗", "員"]], "hint": "方框之中有圓貝，圓滿圓形" },
@@ -977,6 +982,7 @@ const STAGES_DATA = [
       { "char": "堅", "layout": "tri", "recipes": [["臣", "又", "土"]], "hint": "土質剛硬，堅強堅定" },
       { "char": "眠", "layout": "lr", "recipes": [["目", "民"]], "hint": "閉目而睡，睡眠冬眠" },
       { "char": "吉", "layout": "tb", "recipes": [["士", "口"]], "hint": "賢士出吉言，吉祥吉利" },
+      { "char": "嘉", "layout": "tb", "recipes": [["吉", "加"]], "hint": "美善讚許，嘉獎嘉賓" },
       { "char": "志", "layout": "tb", "recipes": [["士", "心"]], "hint": "士人心中抱負，志向意志" },
       { "char": "結", "layout": "lr", "recipes": [["糸", "吉"]], "hint": "絲線打結，團結結果" },
       { "char": "扶", "layout": "lr", "recipes": [["手", "夫"]], "hint": "伸手攙扶，扶持扶助" },
@@ -2540,18 +2546,27 @@ const STAGES_DATA = [
   },
   {
     "stage": 109,
-    "title": "嘉賓滿座",
-    "subtitle": "普天同慶",
-    "components": ["慶", "賀", "嘉", "駕", "架"],
+    "title": "登高望遠",
+    "subtitle": "渺目千里",
+    "components": ["婁"],
     "unlockThreshold": 4,
     "chestRewardCoins": 290,
     "targets": [
-      { "char": "賀", "layout": "tb", "recipes": [["加", "貝"], ["力", "口", "貝"]], "hint": "奉財相慶，祝賀道賀" },
-      { "char": "架", "layout": "tb", "recipes": [["加", "木"], ["力", "口", "木"]], "hint": "木構支架，書架架構" },
-      { "char": "駕", "layout": "tb", "recipes": [["加", "馬"], ["力", "口", "馬"]], "hint": "駕馭駿馬，駕車凌駕" },
-      { "char": "茄", "layout": "tb", "recipes": [["艹", "加"]], "hint": "草本蔬果，茄子番茄" },
-      { "char": "珈", "layout": "lr", "recipes": [["王", "加"]], "hint": "古代婦人玉飾，珈藍" },
-      { "char": "嘉", "layout": "tb", "recipes": [["吉", "加"]], "hint": "美善讚許，嘉獎嘉賓" }
+      { "char": "樓", "layout": "lr", "recipes": [["木", "婁"]], "hint": "重屋高閣，高樓一樓" },
+      { "char": "嘍", "layout": "lr", "recipes": [["口", "婁"]], "hint": "山寨隨從與語氣助詞，嘍囉" },
+      { "char": "摟", "layout": "lr", "recipes": [["手", "婁"]], "hint": "伸臂環抱牽聚，摟抱" },
+      { "char": "僂", "layout": "lr", "recipes": [["人", "婁"]], "hint": "脊背彎曲，佝僂傴僂" },
+      { "char": "螻", "layout": "lr", "recipes": [["虫", "婁"]], "hint": "土中鳴蟲，螻蛄螻蟻" },
+      { "char": "髏", "layout": "lr", "recipes": [["骨", "婁"]], "hint": "乾枯頭骨骸骨，骷髏髑髏" },
+      { "char": "蔞", "layout": "tb", "recipes": [["艹", "婁"]], "hint": "水邊香草植物，蔞蒿" },
+      { "char": "廔", "layout": "enc", "recipes": [["广", "婁"]], "hint": "屋宇窗牖通明，廔空" },
+      { "char": "塿", "layout": "lr", "recipes": [["土", "婁"]], "hint": "隆起的小土丘，部塿" },
+      { "char": "簍", "layout": "tb", "recipes": [["竹", "婁"]], "hint": "竹篾編織容器，竹簍背簍" },
+      { "char": "鏤", "layout": "lr", "recipes": [["金", "婁"]], "hint": "金屬雕刻工藝，鏤空雕鏤" },
+      { "char": "縷", "layout": "lr", "recipes": [["糸", "婁"]], "hint": "細長絲線與條分，一縷青煙、縷析" },
+      { "char": "褸", "layout": "lr", "recipes": [["衣", "婁"]], "hint": "破舊衣襟，衣衫襤褸" },
+      { "char": "屢", "layout": "enc", "recipes": [["尸", "婁"]], "hint": "接連多次（包圍結構），屢次屢見不鮮" },
+      { "char": "窶", "layout": "tb", "recipes": [["穴", "婁"]], "hint": "居室狹小貧寒，寒窶貧窶" }
     ]
   },
   {
