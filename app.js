@@ -348,7 +348,7 @@ const STAGES_DATA = [
     "chestRewardCoins": 80,
     "targets": [
       { "char": "王", "layout": "tb", "recipes": [["干", "一"], ["一", "土"]], "hint": "三橫貫通天地人，王者風範" },
-      { "char": "珈", "layout": "lr", "recipes": [["王", "加"]], "hint": "古代婦人玉飾，珈藍" }
+      { "char": "珈", "layout": "lr", "recipes": [["王", "加"]], "hint": "古代婦人玉飾，珈藍" },
       { "char": "皇", "layout": "tb", "recipes": [["白", "王"]], "hint": "白玉光輝照王者，堂皇皇帝" },
       { "char": "玉", "layout": "enc", "recipes": [["王", "丶"]], "hint": "王者腰間佩美玉" },
       { "char": "主", "layout": "tb", "recipes": [["丶", "王"]], "hint": "燈火一點居王上，一家之主" },
@@ -1749,7 +1749,7 @@ const STAGES_DATA = [
       { "char": "躍", "layout": "lr", "recipes": [["足", "翟"]], "hint": "騰足跳起，飛躍跳躍" },
       { "char": "濯", "layout": "lr", "recipes": [["水", "翟"]], "hint": "以水洗滌，洗濯" },
       { "char": "擢", "layout": "lr", "recipes": [["手", "翟"]], "hint": "伸手拔起，拔擢提拔" },
-      { "char": "戳", "layout": "lr", "recipes": [["翟", "戈"]], "hint": "刺擊與印記，郵戳圖戳" }
+      { "char": "戳", "layout": "lr", "recipes": [["翟", "戈"]], "hint": "刺擊與印記，郵戳圖戳" },
       { "char": "推", "layout": "lr", "recipes": [["手", "隹"]], "hint": "伸手向前推動，推廣推理" },
       { "char": "堆", "layout": "lr", "recipes": [["土", "隹"]], "hint": "土石聚積，堆積土堆" },
       { "char": "集", "layout": "tb", "recipes": [["隹", "木"]], "hint": "群鳥棲息木上，集合收集" },
